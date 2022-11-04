@@ -81,11 +81,12 @@ router.post("/signup", isLoggedOut, (req, res) => {
 });
 
 // GET /auth/login
+// Only checks if the user is in the session
 router.get("/login", isLoggedOut, (req, res) => {
   res.render("auth/login");
 });
 
-// POST /auth/login
+// POST /auth/login // U can choose how to log in the user (ex. delete the username)
 router.post("/login", isLoggedOut, (req, res, next) => {
   const { username, email, password } = req.body;
 
