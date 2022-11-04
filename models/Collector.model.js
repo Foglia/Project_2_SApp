@@ -1,7 +1,8 @@
 const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
-const userSchema = new Schema(
+
+const collectorSchema = new Schema(
   {
     username: {
       type: String,
@@ -20,7 +21,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    //necesitamos poner artist/colector
+    favorites: [],
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
@@ -28,6 +29,6 @@ const userSchema = new Schema(
   }
 );
 
-const User = model("User", userSchema);
+const Collector = model("Collector", collectorSchema);
 
-module.exports = User;
+module.exports = Collector;

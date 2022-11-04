@@ -1,26 +1,24 @@
 const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
-const userSchema = new Schema(
+const nftSchema = new Schema(
   {
-    username: {
+    title: {
       type: String,
       required: false,
       unique: true,
       trim: true,
     },
-    email: {
-      type: String,
+    value: {
+      type: Number,
       required: true,
       unique: true,
       trim: true,
-      lowercase: true,
     },
-    password: {
+    description: {
       type: String,
       required: true,
     },
-    //necesitamos poner artist/colector
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
@@ -28,6 +26,6 @@ const userSchema = new Schema(
   }
 );
 
-const User = model("User", userSchema);
+const NFT = model("nft", nftSchema);
 
-module.exports = User;
+module.exports = NFT;
