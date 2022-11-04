@@ -61,6 +61,7 @@ User model
 
 
 User artist model
+```javascript
   {
     username: {
       type: String,
@@ -84,8 +85,8 @@ User artist model
     }
   },
 
-```
 User Collector model 
+```javascript
   {
     username: {
       type: String,
@@ -108,7 +109,7 @@ User Collector model
   },
 
 NFT Model
-
+```javascript
   {
     title: {
       type: String,
@@ -130,8 +131,6 @@ NFT Model
 
 
 ```
-
-
 
 <br>
 
