@@ -34,16 +34,16 @@ NFTrade is a platform where artists can upload their nfts and create a personal 
 | ---------- | ---------------------------------- | ------------------------------------------------------------ | -------------------------------------------------------- |
 | `GET`      | `/`                                | Main page route.  Renders home `index` view.                 |                                                          |
 | `GET`      | `/login`                           | Renders `login` form view.                                   |                                                          |
-| `POST`     | `/login`                           | Sends Login form data to the server.                         | { email, password }                                      |
+| `POST`     | `/login`                           | Sends Login form data to the server.                         | { email, password } and type of user                                      |
 | `GET`      | `/signup`                          | Renders `signup` form view.                                  |                                                          |
-| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  email, password  }                                    |
-| `GET`      | `/private/edit-profile`            | Private route. Renders `edit-profile` form view.             |                                                          |
+| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  email, password  } and type of user                                   |
+| `GET`      | `/private/edit-profile`            | Private route. Renders `edit-profile` form view.             |  Info of the user type: Artist or Collector                                                        |
 | `PUT`      | `/private/edit-profile`            | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
-| `GET`      | `/private/favorites`               | Private route. Render the `favorites` view.                  |                                                          |
-| `POST`     | `/private/favorites/`              | Private route. Adds a new favorite for the current user.     | { name, cuisine, city, }                                 |
-| `DELETE`   | `/private/favorites/:nftId` | Private route. Deletes the existing favorite from the current user. |                                                          |
+| `GET`      | `/nft`               | Private route. Render the `favorites` view.                  |                                                          |
+| `POST`     | `/artist/nft/`              | Private route. Adds a new NFT for the current user.     |                                |
+| `DELETE`   | `/private/profile/{_id} | Private route. Deletes the existing collector from the current user. |                                                          |
 | `GET`      | `/nft`                     | Renders `nft-gallery` view.                              |                                                          |
-| `GET`      | `/artist/details/:id`         | Renders `artist-details` view for the particular restaurant. |                                                          |
+
 
 
 
@@ -51,7 +51,6 @@ NFTrade is a platform where artists can upload their nfts and create a personal 
 ## Models
 
 User model
-
 ```javascript
 {
   name: String,
@@ -60,25 +59,75 @@ User model
   favorites: [FavoriteId],
 }
 
+
+User artist model
+  {
+    username: {
+      type: String,
+      required: false,
+      unique: true,
+      trim: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+      lowercase: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    upload: {
+        type: Image
+    }
+  },
+
 ```
+User Collector model 
+  {
+    username: {
+      type: String,
+      required: false,
+      unique: true,
+      trim: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+      lowercase: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    favorites: [],
+  },
 
-Nft model 
+NFT Model
 
-{
-  title: String,
-  value: number,
-  favorites: [FavoriteId],
-}
+  {
+    title: {
+      type: String,
+      required: false,
+      unique: true,
+      trim: true,
+    },
+    value: {
+      type: Number,
+      required: true,
+      unique: true,
+      trim: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+  },
 
-
-
-
-Favorites model
-
-```javascript
-{
-  placeId: String,
-}
 
 ```
 
@@ -88,6 +137,7 @@ Favorites model
 
 ## API's
 
+- None, they would be created
 
 <br>
 
@@ -135,6 +185,7 @@ The url to your presentation slides
 [Slides Link](https://docs.google.com/presentation/d/1P5FIi0vHZBUcgUtmt1M4_lLCO5dwdJ4UOgtJa4ehGfk/edit?usp=sharing)
 
 ### Contributors
-FirstName LastName - [`<github-username>`](https://github.com/person1-username) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person1-username)
+Flavia Fogliato - [`Foglia`](https://github.com/Foglia) - [`Flavia Fogliato`](https://www.linkedin.com/in/flaviafogliato)
 
-FirstName LastName - [`<github-username>`](https://github.com/person2-username) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person2-username)
+Andrea Leonetti - [`ciroandrealeonetti`](https://github.com/ciroandrealeonetti) - [`Andrea Leonetti `](https://www.linkedin.com/in/ciroandrealeonetti/)
+
