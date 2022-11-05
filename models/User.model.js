@@ -20,6 +20,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    uploads: [String],
+    favorites: [{type: Schema.Types.ObjectId, ref:"NFT"}],
+    bought: [{type: Schema.Types.ObjectId, ref:"NFT"}],
+    type: String,
+    required: true,
     //necesitamos poner artist/colector
   },
   {
