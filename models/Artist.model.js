@@ -1,35 +1,18 @@
 const { Schema, model } = require("mongoose");
-
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
-const artistSchema = new Schema(
-  {
-    username: {
-      type: String,
-      required: false,
-      unique: true,
-      trim: true,
+const artistSchema = new Schema({
+    artist: {type: Schema.Types.ObjectId, ref:"Artist"},
+    firstName: String,
+    lastName: String,
+    Country: String,
+    artworks: {
+    title: String,
+    Year: Number,
     },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-      trim: true,
-      lowercase: true,
-    },
-    password: {
-      type: String,
-      required: true,
-    },
-    upload: {
-        type: Image
-    }
-  },
-  {
-    // this second object adds extra properties: `createdAt` and `updatedAt`
-    timestamps: true,
-  }
+   },
 );
 
 const Artist = model("Artist", artistSchema);
-
 module.exports = Artist;
+
+//Timestamps missing

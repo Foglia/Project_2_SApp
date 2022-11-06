@@ -5,19 +5,17 @@ const nftSchema = new Schema(
   {
     title: {
       type: String,
-      required: false,
-      unique: true,
+      required: true,
+      unique: false,
       trim: true,
     },
+    author: String,
+    description: String,
     value: {
       type: Number,
       required: true,
-      unique: true,
+      unique: false,
       trim: true,
-    },
-    description: {
-      type: String,
-      required: true,
     },
   },
   {
@@ -26,6 +24,5 @@ const nftSchema = new Schema(
   }
 );
 
-const NFT = model("nft", nftSchema);
-
-module.exports = NFT;
+const Nft = model("Nft", nftSchema);
+module.exports = Nft;

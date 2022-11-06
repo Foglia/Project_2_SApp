@@ -36,19 +36,25 @@ NFTrade is a platform where artists can upload their nfts and create a personal 
 | `GET`      | `/login`                           | Renders `login` form view.                                   |                                                          |
 | `POST`     | `/login`                           | Sends Login form data to the server.                         | { email, password }                                      |
 | `GET`      | `/signup`                          | Renders `signup` form view.                                  |                                                          |
-| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  email, password  }                                    |
-| `GET`      | `/private/edit-profile`            | Private route. Renders `edit-profile` form view.             |                                                          |
-| `PUT`      | `/private/edit-profile`            | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
+| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | *see the details on Artist, Collector or NFT
+                                    |
+| `GET`      | `/private/edit-profile`            | Private route(s) we will need 3, one for each model (artist-profile, collector-profile and nft-profile ). Renders `edit-profile` form view.             |                                                          |
+| `PUT`      | `/private/edit-profile`            | Private route. Sends edit-profile info to server and updates artist/collector/nft in DB. | |
 | `GET`      | `/private/favorites`               | Private route. Render the `favorites` view.                  |                                                          |
 | `POST`     | `/private/favorites/`              | Private route. Adds a new favorite for the current user.     | { name, cuisine, city, }                                 |
-| `DELETE`   | `/private/favorites/:nftId` | Private route. Deletes the existing favorite from the current user. |                                                          |
-| `GET`      | `/nft`                     | Renders `nft-gallery` view.                              |                                                          |
-| `GET`      | `/artist/details/:id`         | Renders `artist-details` view for the particular restaurant. |                                                          |
+| `GET`   | `/nft/details` | Private route. Deletes the existing favorite from the current user. |                     |
+| `GET`      | `/nft`                     | Renders `nft-gallery` view.                                                     |
+| `GET`      | `/artist/details/:id`         | Renders `artist-details` view for the particular restaurant. |        
+| `GET`      | `/nft`                     | Renders `nft-gallery` view.                                                   |
+
+
 
 
 
 
 ## Models
+
+
 
 User model
 
@@ -70,8 +76,12 @@ Nft model
   favorites: [FavoriteId],
 }
 
+Collector model
+
+{
 
 
+}
 
 Favorites model
 
@@ -88,13 +98,11 @@ Favorites model
 
 ## API's
 
-
+None
 <br>
 
 
 ## Packages
-
-
 
 <br>
 
@@ -135,6 +143,6 @@ The url to your presentation slides
 [Slides Link](https://docs.google.com/presentation/d/1P5FIi0vHZBUcgUtmt1M4_lLCO5dwdJ4UOgtJa4ehGfk/edit?usp=sharing)
 
 ### Contributors
-FirstName LastName - [`<github-username>`](https://github.com/person1-username) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person1-username)
+Flavia Fogliato - [`Foglia`](https://github.com/Foglia) - [`Flavia Fogliato`](https://www.linkedin.com/in/flaviafogliato)
 
-FirstName LastName - [`<github-username>`](https://github.com/person2-username) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person2-username)
+Andrea Leonetti - [`ciroandrealeonetti`](https://github.com/ciroandrealeonetti) - [`Andrea Leonetti `](https://www.linkedin.com/in/ciroandrealeonetti/)

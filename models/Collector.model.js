@@ -1,12 +1,11 @@
 const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
-
 const collectorSchema = new Schema(
   {
     username: {
       type: String,
-      required: false,
+      required: true,
       unique: true,
       trim: true,
     },
@@ -30,5 +29,4 @@ const collectorSchema = new Schema(
 );
 
 const Collector = model("Collector", collectorSchema);
-
 module.exports = Collector;

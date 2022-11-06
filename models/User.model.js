@@ -20,19 +20,24 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    select: {
+    type: [{ type: Schema.Types.ObjectId, ref: 'Artist' || 'Collector' }]
+    },
+    }, 
+
+    {
     uploads: [String],
-    favorites: [{type: Schema.Types.ObjectId, ref:"NFT"}],
-    bought: [{type: Schema.Types.ObjectId, ref:"NFT"}],
+    favorites: [{type: Schema.Types.ObjectId, ref:"Nft"}],
+    bought: [{type: Schema.Types.ObjectId, ref:"Nft"}],
     type: String,
     required: true,
-    //necesitamos poner artist/colector
-  },
+    },
   {
+    //necesitamos poner artist/colector,
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
   }
 );
 
 const User = model("User", userSchema);
-
 module.exports = User;
