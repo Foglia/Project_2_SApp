@@ -1,7 +1,6 @@
-const express = require('express');
+/* const express = require('express');
 const collectorRouter = express.Router();
 const mongoose = require("mongoose");
-const Collector = require('../models/Collector.model');
 
 collectorRouter.post('/collector', (req, res) => {
     collectorRouter.create(req.body)
@@ -19,4 +18,4 @@ collectorRouter.post('/collector', (req, res) => {
     .catch( err => console.log("Error while displaying", err))
   })
 
-module.exports = collectorRouter;
+module.exports = collectorRouter; */

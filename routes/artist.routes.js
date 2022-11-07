@@ -1,7 +1,6 @@
-const express = require('express');
+/* const express = require('express');
 const mongoose = require("mongoose");
 const artistRouter = express.Router();
-const Artist = require('../models/Artist.model');
 
 artistRouter.post('/artist', (req, res) => {
     Artist.create(req.body)
@@ -20,3 +19,4 @@ artistRouter.post('/artist', (req, res) => {
   })
 
 module.exports = artistRouter;
+ */

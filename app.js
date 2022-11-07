@@ -34,7 +34,7 @@ app.use("/auth", authRoutes);
 app.use('/artist', artistRoutes);
 
 const collectorRoutes = require("./routes/collector.routes")
-app.use('/collector', collectorRoutes);
+app.use('/collector', collectorRoutes); */
 
 const nftRoutes = require("./routes/nft.routes")
 app.use('/nft', nftRoutes); */
