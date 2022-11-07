@@ -22,7 +22,7 @@ const nftSchema = new Schema(
     }, // can be aditional
      ImgURL: {
       type: String,
-      
+      //required: true,
     },
   },
   {

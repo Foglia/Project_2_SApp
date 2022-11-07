@@ -64,7 +64,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
       return User.create({ username, email, password: hashedPassword, accountType });
     })
     .then((user) => {
-      res.redirect("/auth/login");
+      res.redirect(`/auth/user/${user._id}`)
     })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -153,6 +153,75 @@ router.get("/logout", isLoggedIn, (req, res) => {
     res.redirect("/");
   });
 });
+
+//Get /artist
+
+router.get("/user/:userId", async (req, res, next) => {
+  const {userId} = req.params
+  const currentUser = req.session.user
+  try {
+    const user = await User.findById(userId)
+if (user.accountType === "Artist") {
+  res.render("artist/new-artist", user)
+} else {
+  res.render("collector/new-collector", user)
+}
+    
+  } catch (error) {
+    console.log(error);
+        next(error)
+  }
+});
+
+
+router.post("/artist/:id", async (req, res, next) => {
+  try {
+    const {firstName, lastName, bio} = req.body;
+    const id = req.params.id
+    const updatedUser = await User.findByIdAndUpdate(id, {firstName, lastName, bio});
+    res.redirect("/")
+  } catch(error) {
+    console.log(error);
+        next(error)
+  }
+});
+
+//Get collector
+
+router.get("/user/:userId", async (req, res, next) => {
+  const {userId} = req.params
+  const currentUser = req.session.user
+  try {
+    const user = await User.findById(userId)
+if (user.accountType === "Collector") {
+  res.render("collector/new-collector", user)
+} else {
+  res.render("artist/new-artist", user)
+}
+    
+  } catch (error) {
+    console.log(error);
+        next(error)
+  }
+});
+
+router.post("/collector/:id", async (req, res, next) => {
+  try {
+    const {firstName, lastName} = req.body;
+    const id = req.params.id
+    const updatedUser = await User.findByIdAndUpdate(id, {firstName, lastName});
+    res.redirect("/")
+  } catch(error) {
+    console.log(error);
+        next(error)
+  }
+});
+
+
+
+
+
+
 
 
 module.exports = router;

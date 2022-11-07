@@ -28,17 +28,17 @@ router.post('/nfts', async (req, res, next) => {
     }
 });
    
-//Read all Nfts
-router.post('/nfts', async (req, res, next) => {
-  try {
-    const nftsFromDB = await Nft.find(); //all nfts
-    res.render('nfts/nfts-list', {nftsFromDB})
-  }
-    catch(error) {
-      console.log(error);
-      next();
-  }
-});
+// //Read all Nfts
+// router.post('/nfts', async (req, res, next) => {
+//   try {
+//     const nftsFromDB = await Nft.find(); //all nfts
+//     res.render('nfts/nfts-list', {nftsFromDB})
+//   }
+//     catch(error) {
+//       console.log(error);
+//       next();
+//   }
+// });
     
-module.exports = router;
+// module.exports = router;
 
