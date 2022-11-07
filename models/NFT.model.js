@@ -21,10 +21,11 @@ const nftSchema = new Schema(
       type: { type: Schema.Types.ObjectId, ref: 'User' }
       }, // can be aditional
  
-     ImgURL {
+     ImgURL: {
       type: String,
       required: true,
     },
+  },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
