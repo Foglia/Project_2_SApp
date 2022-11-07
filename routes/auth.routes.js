@@ -186,6 +186,40 @@ router.post("/artist/:id", async (req, res, next) => {
   }
 });
 
+//Get collector
+
+router.get("/user/:userId", async (req, res, next) => {
+  const {userId} = req.params
+  const currentUser = req.session.user
+  try {
+    const user = await User.findById(userId)
+if (user.accountType === "Collector") {
+  res.render("collector/new-collector", user)
+} else {
+  res.render("artist/new-artist", user)
+}
+    
+  } catch (error) {
+    console.log(error);
+        next(error)
+  }
+});
+
+router.post("/collector/:id", async (req, res, next) => {
+  try {
+    const {firstName, lastName} = req.body;
+    const id = req.params.id
+    const updatedUser = await User.findByIdAndUpdate(id, {firstName, lastName});
+    res.redirect("/")
+  } catch(error) {
+    console.log(error);
+        next(error)
+  }
+});
+
+
+
+
 
 
 
