@@ -17,6 +17,10 @@ const nftSchema = new Schema(
       unique: false,
       trim: true,
     },
+    imageUrl: {
+      type: String,
+      required: true,
+    }
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

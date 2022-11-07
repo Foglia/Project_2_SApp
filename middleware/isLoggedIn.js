@@ -1,4 +1,4 @@
-const Artist = require("../models/Artist.model");
+const User = require("../models/User.model"); 
 
 module.exports = (req, res, next) => {
   // checks if the user is logged in when trying to access a specific page
@@ -9,11 +9,5 @@ module.exports = (req, res, next) => {
   next();
 };
 
-module.exports = (req, res, next) => {
-  // checks if the user is logged in when trying to access a specific page
-  if (req.session.currentUser.type === "Artist") {
-    return res.redirect("/");
-  }
 
-  next();
-};
+
