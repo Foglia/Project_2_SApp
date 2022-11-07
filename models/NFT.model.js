@@ -9,20 +9,31 @@ const nftSchema = new Schema(
       unique: false,
       trim: true,
     },
-    author: String,
-    description: String,
+    description: {
+    type: String,
+  },
     value: {
       type: Number,
       required: true,
-      unique: false,
       trim: true,
     },
+    author: {
+      type: { type: Schema.Types.ObjectId, ref: 'User' }
+      }, // can be aditional
   },
+     ImgURL {
+      type: String,
+      required: true,
+    },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
   }
 );
+
+// favorites: [{type: Schema.Types.ObjectId, ref:"Nft"}],
+// bought: [{type: Schema.Types.ObjectId, ref:"Nft"}],
+// type: String,
 
 const Nft = model("Nft", nftSchema);
 module.exports = Nft;
