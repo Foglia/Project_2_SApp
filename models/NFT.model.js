@@ -11,7 +11,7 @@ const nftSchema = new Schema(
     },
     description: {
     type: String,
-  },
+   },
     value: {
       type: Number,
       required: true,
@@ -19,12 +19,12 @@ const nftSchema = new Schema(
     },
     author: {
       type: { type: Schema.Types.ObjectId, ref: 'User' }
-      }, // can be aditional
- 
-     ImgURL {
+    }, // can be aditional
+     ImgURL: {
       type: String,
-      required: true,
+      
     },
+  },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
