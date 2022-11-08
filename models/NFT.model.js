@@ -20,7 +20,7 @@ const nftSchema = new Schema(
     author: {
       type: { type: Schema.Types.ObjectId, ref: 'User' }
     }, // can be aditional
-     ImgURL: {
+     imgUrl: {
       type: String,
       //required: true,
     },
