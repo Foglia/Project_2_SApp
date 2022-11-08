@@ -210,7 +210,7 @@ router.post("/collector/:id", async (req, res, next) => {
     const {firstName, lastName} = req.body;
     const id = req.params.id
     const updatedUser = await User.findByIdAndUpdate(id, {firstName, lastName});
-    res.redirect("/")
+    res.redirect("/login")
   } catch(error) {
     console.log(error);
         next(error)

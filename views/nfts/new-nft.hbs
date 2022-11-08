@@ -1,12 +1,12 @@
-<form action="/new-nft" method="POST">
+<form action="/nfts/create" method="POST">
   <label for="">Title:</label>
   <input type="text" name="title" id="">
   <label for="">Description:</label>
   <input type="textarea" name="description" rows="5" cols="10"></textarea>
   <label for="">Value:</label>
   <input type="number" name="value" id="">
-  <label form="">Author:</label>
-  <input type="name" name="author" id="">
+{{!--   <label form="">Author:</label>
+  <input type="name" name="author" id=""> --}}
   <label for='image'>Image:<input type='file' name='image'/></label>
 
   <button type="submit">Create</button>
