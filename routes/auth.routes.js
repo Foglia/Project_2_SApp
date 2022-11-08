@@ -186,6 +186,26 @@ router.post("/artist/:id", async (req, res, next) => {
   }
 });
 
+//Get artist profile
+router.get("/profile/:userId", async (req, res, next) => {
+  const {userId} = req.params
+  const currentUser = req.session.user
+  try {
+    const user = await User.findById(userId).populate("uploads favorites bought")
+if (user.accountType === "Artist") {
+  res.render("artist/artist-profile", user)
+} else {
+  res.render("collector/collector-profile", user)
+}
+    
+  } catch (error) {
+    console.log(error);
+        next(error)
+  }
+});
+
+
+
 //Get collector
 
 router.get("/user/:userId", async (req, res, next) => {

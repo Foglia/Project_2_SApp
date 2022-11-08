@@ -5,7 +5,7 @@
 {{#each nftsFromDb}}
   <div>
     <h3>{{title}}</h3>
-    <h6>Created By:{{_id.author}}</h6>
+    <a href="/auth/profile/{{author._id}}"><h6>Created By:{{author.username}}</h6></a>
     <img src='{{imgUrl}}' alt='{{title}}' />
   </div>
 {{/each}}

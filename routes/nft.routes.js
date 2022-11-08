@@ -46,7 +46,7 @@ router.post('/create', isArtist, fileUploader.single('image'), async (req, res, 
 //Read all Nfts
 router.get('/gallery', async (req, res, next) => {
   try {
-    const nftsFromDb = await Nft.find(); //all nfts
+    const nftsFromDb = await Nft.find().populate("author"); //all nfts
     res.render('nfts/nft-list', {nftsFromDb})
   }
     catch(error) {
