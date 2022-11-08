@@ -135,6 +135,11 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           // Remove the password field
           delete req.session.currentUser.password;
 
+          //app.locals acts like a session but for the views
+          req.app.locals.user = user.toObject()
+          delete req.app.locals.user.password;
+
+
           res.redirect("/");
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
@@ -144,6 +149,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 
 // GET /auth/logout
 router.get("/logout", isLoggedIn, (req, res) => {
+  req.app.locals.user = false
   req.session.destroy((err) => {
     if (err) {
       res.status(500).render("auth/logout", { errorMessage: err.message });
@@ -179,7 +185,7 @@ router.post("/artist/:id", async (req, res, next) => {
     const {firstName, lastName, bio} = req.body;
     const id = req.params.id
     const updatedUser = await User.findByIdAndUpdate(id, {firstName, lastName, bio});
-    res.redirect("/")
+    res.redirect("/login")
   } catch(error) {
     console.log(error);
         next(error)

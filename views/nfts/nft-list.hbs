@@ -1,12 +1,20 @@
 <form action="/nfts/nfts-list" method="GET">
-
 <h1>Gallery</h1>
- 
+
+
+
 {{#each nftsFromDb}}
   <div>
     <h3>{{title}}</h3>
-    <h6>Created By:{{_id.author}}</h6>
-    <img src='{{imgUrl}}' alt='{{title}}' />
+    <h6>Created By:{{author.username}}</h6> 
+    {{!-- change it --}}
+    {{!-- redirect to artist profile while clicking --}}
+     <img src='{{imgUrl}}' alt='{{title}}'/>
+     <br>
+
+      {{#ifEquals ../userId author._id}}
+     <a href='/nfts/edit/{{_id}}' class='btn btn-primary'>Edit</a>
+      {{/ifEquals}}
   </div>
 {{/each}}
 
