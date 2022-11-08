@@ -1,8 +1,11 @@
+<form action="/nfts/nfts-list" method="GET">
+
 <h1>Gallery</h1>
  
-{{#each nftsFromDB}}
+{{#each nftsFromDb}}
   <div>
     <h3>{{title}}</h3>
+    <h6>Created By:{{_id.author}}</h6>
   </div>
 {{/each}}
 
