@@ -89,7 +89,30 @@ router.post("/edit/:id", fileUploader.single('image'), async (req, res, next) =>
     console.log(error);
     next(error);
 }
-})
+});
+
+router.get('/delete/:id', async (req, res, next) => {
+  try {
+    const { id } = req.params
+    const deleteNft = await Nft.findByIdAndRemove(id);
+    res.redirect('/nfts/gallery');
+  }
+  catch(error) {
+    console.log(error);
+    next();
+  }
+}); 
+
+// router.post('/delete/:id', async (req, res, next) => {
+//   try {
+//     const { id } = req.params;
+//     await Nft.findByIdAndRemove(id);
+//     res.redirect('/nfts/gallery');
+//   } catch (error) {
+//     console.log(error);
+//     next(error);
+//   }
+// });
 
     
 module.exports = router;
