@@ -22,39 +22,26 @@ router.get('/create', isArtist,  async (req, res, next) => {
     next(error);
 }
 })
+//img with cloudnary
+router.post('/create', isArtist, fileUploader.single('image'), async (req, res, next) => {
+    const author = req.session.currentUser._id;
+    let { title, description, value, imgUrl } = req.body;
+    try {
+      let imgUrl;
 
-// //img with cloudnary
-// router.post('/nft', async (req, res, next) => {
-//     const { title, description, value, author, imgUrl } = req.body;
-//     try {
-//       let imgUrl;
-//       if (req.file) {
-//         imgUrl = req.file.path;
-//       } else {
-//         imgUrl = 'https://upload.wikimedia.org/wikipedia/en/e/ed/Nyan_cat_250px_frame.PNG';
-//       }
-//       let createdNft = await Nft.create({title, description, value, author, imgUrl})
-//       res.redirect('nfts/gallery');
-//     } catch (error) {
-//       console.log(error);
-//       next(error);
-//     }
-//   });
+      if (req.file) {
+        imgUrl = req.file.path;
+      } else {
+        imgUrl = 'https://upload.wikimedia.org/wikipedia/en/e/ed/Nyan_cat_250px_frame.PNG';
+      }
 
-router.post('/create', async (req, res, next) => {
-
-  const author = req.session.currentUser._id
-  console.log(author)
-  try {
-    const { title, description, value, ImgURL } = req.body;
-    let createdNft = await Nft.create({title, description, value, author, ImgURL})
-    console.log(createdNft)
-    res.redirect('/nfts/gallery');
-} catch(error) {
-        console.log(error);
-        next(error);
+      let createdNft = await Nft.create({title, description, value, author, imgUrl})
+      res.redirect('/nfts/gallery');
+    } catch (error) {
+      console.log(error);
+      next(error);
     }
-});
+  });
    
 //Read all Nfts
 router.get('/gallery', async (req, res, next) => {

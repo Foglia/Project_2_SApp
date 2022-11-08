@@ -1,14 +1,25 @@
 //Tryng to use Cloudinary to upload IMG
-const dotenv = require('dotenv')
-const cloudinaryModule = require('cloudinary')
+// config/cloudinary.config.js
 
-dotenv.config();
-const cloudinary = cloudinaryModule.v2;
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const multer = require('multer');
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_KEY,
-  api_secret: process.env.CLOUDINARY_SECRET,
+  api_secret: process.env.CLOUDINARY_SECRET
 });
 
-module.exports = cloudinary
+const storage = new CloudinaryStorage({
+  // cloudinary: cloudinary,
+  cloudinary,
+  params: {
+    allowed_formats: ['jpg', 'png'],
+    folder: 'Nfts' // The name of the folder in cloudinary
+    // resource_type: 'raw' => this is in case you want to upload other type of files, not just images
+  }
+});
+
+//                     storage: storage
+module.exports = multer({ storage });
