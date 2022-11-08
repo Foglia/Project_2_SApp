@@ -47,6 +47,8 @@ router.get('/gallery', async (req, res, next) => {
   try {
     const nftsFromDb = await Nft.find().populate("author"); //all nfts
     res.render('nfts/nft-list', { userId, nftsFromDb})
+    const nftsFromDb = await Nft.find().populate("author"); //all nfts
+    res.render('nfts/nft-list', {nftsFromDb})
   }
     catch(error) {
       console.log(error);
