@@ -1,12 +1,13 @@
 <form action="/nfts/nfts-list" method="GET">
 <h1>Gallery</h1>
 
-
-
 {{#each nftsFromDb}}
   <div>
     <h3>{{title}}</h3>
+    <a href="/auth/profile/{{author._id}}">
+
     <h6>Created By:{{author.username}}</h6> 
+    </a>
     {{!-- change it --}}
     {{!-- redirect to artist profile while clicking --}}
      <img src='{{imgUrl}}' alt='{{title}}'/>

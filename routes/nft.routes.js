@@ -43,12 +43,13 @@ router.post('/create', isArtist, fileUploader.single('image'), async (req, res, 
    
 //Read all Nfts
 router.get('/gallery', async (req, res, next) => {
-  const userId = req.session.currentUser._id;
   try {
+    let userId;
+    if(req.session.currentUser){
+       userId = req.session.currentUser._id;
+    }
     const nftsFromDb = await Nft.find().populate("author"); //all nfts
     res.render('nfts/nft-list', { userId, nftsFromDb})
-    const nftsFromDb = await Nft.find().populate("author"); //all nfts
-    res.render('nfts/nft-list', {nftsFromDb})
   }
     catch(error) {
       console.log(error);
@@ -69,12 +70,20 @@ router.get('/edit/:id', async (req, res, next) => {
   }
 }); 
 
-router.post("/edit/:id", async (req, res, next) => {
+router.post("/edit/:id", fileUploader.single('image'), async (req, res, next) => {
   try {
     const { id } = req.params
-    const {title, description, value, author, imgUrl} = req.body 
+    const {title, description, value, currentImage} = req.body 
 
-    const editNft = await Nft.findByIdAndUpdate(id, {title, description, value, author, imgUrl});
+    let imgUrl;
+
+    if (req.file) {
+      imgUrl = req.file.path;
+    } else {
+      imgUrl = currentImage;
+    }
+
+    const editNft = await Nft.findByIdAndUpdate(id, {title, description, value, imgUrl});
     res.redirect('/nfts/gallery');
 } catch {
     console.log(error);
