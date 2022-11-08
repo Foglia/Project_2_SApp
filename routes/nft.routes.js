@@ -23,7 +23,7 @@ router.get('/create', isArtist,  async (req, res, next) => {
 //img with cloudnary
 router.post('/create', isArtist, fileUploader.single('image'), async (req, res, next) => {
     const author = req.session.currentUser._id;
-    let { title, description, value, imgUrl } = req.body;
+    let { title, description, value } = req.body;
     try {
       let imgUrl;
 
