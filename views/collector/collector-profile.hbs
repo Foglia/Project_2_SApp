@@ -1,7 +1,13 @@
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/nfts/gallery">Gallery</a></li>
+  <li><a href="/auth/signup">SignUp</a></li>
+  <li><a href="/auth/login">LogIn</a></li>
+  <li><a href="/nfts/gallery">Gallery</a></li>
+</ul>
+
 <h1>{{accountType}}</h1>
-<hr/>
 
-<div>
-    <h2>{{firstName}} {{lastName}}</h2>
+{{#ifEquals ../userId author._id}}
 
-   
+{{/ifEquals}}

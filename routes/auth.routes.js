@@ -193,6 +193,7 @@ router.post("/artist/:id", async (req, res, next) => {
 });
 
 //Get artist profile
+
 router.get("/profile/:userId", async (req, res, next) => {
   const {userId} = req.params
   const currentUser = req.session.user
@@ -276,7 +277,7 @@ router.post("/collector/:id", async (req, res, next) => {
     const {firstName, lastName} = req.body;
     const id = req.params.id
     const updatedUser = await User.findByIdAndUpdate(id, {firstName, lastName});
-    res.redirect("/auth/login")
+    res.redirect("/auth/login")    
   } catch(error) {
     console.log(error);
         next(error)
