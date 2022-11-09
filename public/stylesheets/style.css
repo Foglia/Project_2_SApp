@@ -33,7 +33,6 @@ li a {
   text-decoration: none;
 }
 
-<<<<<<< HEAD
 .title {
   text-align: center ;
   margin: 15vh;
@@ -49,7 +48,6 @@ li a {
 }
 
 
-=======
 /*GALLERY Basics  */
 /* div.gallery {
   align-content: center;
@@ -153,7 +151,6 @@ div.card:hover {
 div.card-image img:hover {
   opacity: 0.8;
 }
->>>>>>> adafa711b7330d09f459ae36fe53d6290a272a6e
 
 
 
