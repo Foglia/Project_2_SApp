@@ -1,1 +1,17 @@
-<h1>{{accountType}}</h1>
+{{#ifEquals ../userId author._id}}
+<h1> Welcome {{username}} </p>
+{{/ifEquals}}
+
+
+<h2>{{accountType}}</h2>
+
+{{#each Artist}}</h2>
+<h1>{{lastName}}</h1>
+{{/each}}
+
+
+    {{#ifEquals ../userId author._id}}
+     <a href='/nfts/create' class='btn btn-primary'>Create a New NFT</a>
+    {{else}}
+     <a href='/nfts/create' class='btn btn-primary' "hidden">Create a New NFT</a>
+    {{/ifEquals}}

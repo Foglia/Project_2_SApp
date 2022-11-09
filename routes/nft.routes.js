@@ -103,17 +103,6 @@ router.get('/delete/:id', async (req, res, next) => {
   }
 }); 
 
-// router.post('/delete/:id', async (req, res, next) => {
-//   try {
-//     const { id } = req.params;
-//     await Nft.findByIdAndRemove(id);
-//     res.redirect('/nfts/gallery');
-//   } catch (error) {
-//     console.log(error);
-//     next(error);
-//   }
-// });
-
     
 module.exports = router;
 

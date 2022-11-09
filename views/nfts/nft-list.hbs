@@ -1,8 +1,10 @@
+
 <form action="/nfts/nfts-list" method="GET">
 <h1>Gallery</h1>
 
 {{#each nftsFromDb}}
-  <div>
+    
+    <div>
     <h3>{{title}}</h3>
     <a href="/auth/profile/{{author._id}}">
 
@@ -13,10 +15,11 @@
      <img src='{{imgUrl}}' alt='{{title}}'/>
      <br>
 
-      {{#ifEquals ../userId author._id}}
+
+  {{#ifEquals ../userId author._id}}
      <a href='/nfts/delete/{{_id}}' class='btn btn-primary'>Delete</a>
      <a href='/nfts/edit/{{_id}}' class='btn btn-primary'>Edit</a>
-      {{/ifEquals}}
+  {{/ifEquals}}
   </div>
 {{/each}}
 
