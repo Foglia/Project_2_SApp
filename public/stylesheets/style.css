@@ -36,6 +36,9 @@ li a {
 .title {
   text-align: center ;
   margin: 15vh;
+  margin-left: 10vh;
+
+  
 }
 
 .subtitle{
@@ -45,9 +48,124 @@ li a {
 
 #login-form {
   text-align: center;
+  
+}
+#email{
+  text-align: center;
+  margin: 5vh;
+  margin-right: 5vh;
+}
+#password{
+  text-align: center;
+  margin-right: 5vh;
+}
+#loginbutton {
+  margin: 5vh;
+  outline: none;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+font: bold 12px Arial, Helvetica, sans-serif;
+color: #fff;
+padding: 10px 20px;
+border: solid 1px skyblue;
+background: skyblue;
 }
 
+#form{
+  text-align: center;
+  
+}
+#username{
+  text-align: center;
+  margin: 5vh;
+  margin-right: 6vh;
+}
+#emailsignup{
+  text-align: center;
+  margin: 5vh;
+  margin-right: 6vh;
+}
+#passwordsignup{
+  text-align: center;
+  margin: 5vh;
+  margin-right: 6vh;
+}
+#typeofuser{
+  text-align: center;
+  margin: 5vh;
+  margin-right: 7vh;
+}
+#signupbutton{
+  outline: none;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+font: bold 12px Arial, Helvetica, sans-serif;
+color: #fff;
+padding: 10px 20px;
+border: solid 1px skyblue;
+background: skyblue;
+}
 
+.new-artist{
+  text-align: center;
+
+}
+#firstname{
+  text-align: center;
+  margin: 5vh;
+}
+#lastname{
+  text-align: center;
+  margin: 5vh;
+}
+#bio{
+  text-align: center;
+  margin: 5vh;
+}
+#newartistbutton{
+  outline: none;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+font: bold 12px Arial, Helvetica, sans-serif;
+color: #fff;
+padding: 10px 20px;
+border: solid 1px skyblue;
+background: skyblue;
+margin-left: 8vh;
+}
+
+#titlenft{
+  text-align: center;
+  margin: 5vh;
+  margin-left: 6vh;
+}
+#description{
+  text-align: center;
+  margin: 5vh;
+}
+#value{
+  text-align: center;
+  margin: 5vh;
+}
+#file{
+  text-align: center;
+  margin: 5vh;
+}
+#nftbutton{
+  outline: none;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+font: bold 12px Arial, Helvetica, sans-serif;
+color: #fff;
+padding: 10px 20px;
+border: solid 1px skyblue;
+background: skyblue;
+margin-left: 10vh;
+}
 /*GALLERY Basics  */
 /* div.gallery {
   align-content: center;

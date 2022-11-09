@@ -15,8 +15,11 @@
 
     </ul>
  {{#ifEquals userId currentUser._id}}
-     <a href='/auth/delete/{{_id}}' class='btn btn-primary'>Delete Profile</a>
-     <a href='/auth/edit/{{user._id}}' class='btn btn-primary'>Edit Profile</a>
+    <form action="/auth/delete/{{user._id}}" method="get">
+    <button type="submit">Delete</button>
+    </form>
+{{!--      <a href='/auth/delete/{{user._id}}' class='btn btn-primary'>Delete Profile</a>
+ --}}     <a href='/auth/edit/{{user._id}}' class='btn btn-primary'>Edit Profile</a>
      <a href='/nfts/create' class='btn btn-primary'>Create a New NFT</a>
 
 
