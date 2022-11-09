@@ -12,9 +12,10 @@ const isArtist = require('../middleware/isArtist')
 //render the nfts/new-nft form
 router.get('/create', isArtist,  async (req, res, next) => {
   try {
+    const currentUser = req.session.currentUser
     // const userId = req.params.id;
     const artist = await User.findOne(); //it will reaturn all the artists
-    res.render("nfts/new-nft", artist) //render in the gallery (later)
+    res.render("nfts/new-nft", {artist, currentUser}) //render in the gallery (later)
 } catch (error) {
     console.log(error);
     next(error);
@@ -45,12 +46,13 @@ router.post('/create', isArtist, fileUploader.single('image'), async (req, res, 
 //Read all Nfts
 router.get('/gallery', async (req, res, next) => {
   try {
+    const currentUser = req.session.currentUser
     let userId;
     if(req.session.currentUser){
        userId = req.session.currentUser._id;
     }
     const nftsFromDb = await Nft.find().populate("author"); //all nfts
-    res.render('nfts/nft-list', { userId, nftsFromDb})
+    res.render('nfts/nft-list', { userId, nftsFromDb, currentUser})
   }
     catch(error) {
       console.log(error);
@@ -62,8 +64,9 @@ router.get('/gallery', async (req, res, next) => {
 router.get('/edit/:id', async (req, res, next) => {
   try {
     const { id } = req.params
+    const currentUser = req.session.currentUser
     const editNft = await Nft.findById(id);
-    res.render('nfts/nft-edit', editNft)
+    res.render('nfts/nft-edit', {editNft, currentUser})
   }
   catch(error) {
     console.log(error);

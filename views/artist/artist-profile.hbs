@@ -1,23 +1,25 @@
-<h1>{{accountType}} </h1><h1>Profile</h1>
+<h1>{{user.accountType}} </h1><h1>Profile</h1>
 <hr/>
 
 <div>
-    <h2>{{firstName}} {{lastName}}</h2>
+    <h2>{{user.firstName}} {{user.lastName}}</h2>
 
     <h3>Works:</h3>
     
     <ul>
 
-{{#each uploads}}
+{{#each user.uploads}}
 <img src="{{imgUrl}}" alt="{{title}}">
-<h6>{{title}}</h6>
+<h3>{{title}}</h3>
 {{/each}}
 
     </ul>
- {{#ifEquals ../userId author._id}}
- 
+ {{#ifEquals userId currentUser._id}}
      <a href='/auth/delete/{{_id}}' class='btn btn-primary'>Delete Profile</a>
-     <a href='/auth/edit/{{_id}}' class='btn btn-primary'>Edit Profile</a>
-      {{/ifEquals}}
+     <a href='/auth/edit/{{user._id}}' class='btn btn-primary'>Edit Profile</a>
+     <a href='/nfts/create' class='btn btn-primary'>Create a New NFT</a>
+
+
+{{/ifEquals}}
 </div>
 

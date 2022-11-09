@@ -56,13 +56,23 @@
  <ul>
   <li><a href="/">Home</a></li>
   <li><a href="/nfts/gallery">Gallery</a></li>
+  {{#unless currentUser}}
   <li><a href="/auth/signup">SignUp</a></li>
-  <li><a href="/nfts/gallery">Gallery</a></li>
-{{#if isLoggedIn}}
+  <li><a href="/auth/login">LogIn</a></li>
+  {{/unless}}
+  <li><p>|</p></li>
+  {{#if currentUser}}
+  <li><a href="/auth/logout">LogOut</a></li>
+  {{/if}}
+  {{#if artist}}
+  <li><a href="/nfts/create">NFT Form</a></li>
+  {{/if}}
+
+{{!-- {{#if isLoggedIn}}
   <li><a href="/auth/logout">LogOut</a></li>
 {{else}}
   <li><a href="/auth/login">LogIn</a></li>
-{{/if}}
+{{/if}} --}}
  </ul>
   
   {{{body}}}
