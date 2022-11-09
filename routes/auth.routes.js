@@ -196,13 +196,14 @@ router.post("/artist/:id", async (req, res, next) => {
 
 router.get("/profile/:userId", async (req, res, next) => {
   const {userId} = req.params
-  const currentUser = req.session.user
+  const currentUser = req.session.currentUser
   try {
     const user = await User.findById(userId).populate("uploads")
+
 if (user.accountType === "Artist") {
-  res.render("artist/artist-profile", user)
+  res.render("artist/artist-profile", {user, currentUser, userId})
 } else {
-  res.render("collector/collector-profile", user)
+  res.render("collector/collector-profile", {user, currentUser, userId})
 }
     
   } catch (error) {
