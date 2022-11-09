@@ -1,1 +1,23 @@
-<h1>{{accountType}}</h1>
+<h1>{{accountType}} </h1><h1>Profile</h1>
+<hr/>
+
+<div>
+    <h2>{{firstName}} {{lastName}}</h2>
+
+    <h3>Works:</h3>
+    
+    <ul>
+
+{{#each uploads}}
+<img src="{{imgUrl}}" alt="{{title}}">
+<h6>{{title}}</h6>
+{{/each}}
+
+    </ul>
+ {{#ifEquals ../userId author._id}}
+ 
+     <a href='/auth/delete/{{_id}}' class='btn btn-primary'>Delete Profile</a>
+     <a href='/auth/edit/{{_id}}' class='btn btn-primary'>Edit Profile</a>
+      {{/ifEquals}}
+</div>
+

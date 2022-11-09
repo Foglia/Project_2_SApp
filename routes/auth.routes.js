@@ -185,7 +185,7 @@ router.post("/artist/:id", async (req, res, next) => {
     const {firstName, lastName, bio} = req.body;
     const id = req.params.id
     const updatedUser = await User.findByIdAndUpdate(id, {firstName, lastName, bio});
-    res.redirect("/login")
+    res.redirect("/auth/login")
   } catch(error) {
     console.log(error);
         next(error)
@@ -197,7 +197,7 @@ router.get("/profile/:userId", async (req, res, next) => {
   const {userId} = req.params
   const currentUser = req.session.user
   try {
-    const user = await User.findById(userId).populate("uploads favorites bought")
+    const user = await User.findById(userId).populate("uploads")
 if (user.accountType === "Artist") {
   res.render("artist/artist-profile", user)
 } else {
@@ -210,7 +210,47 @@ if (user.accountType === "Artist") {
   }
 });
 
+//Edit artist profile
 
+router.get('/edit/:userId', async (req, res, next) => {
+  try {
+    const  id  = req.params.userId
+    const editArtist = await User.findById(id);
+
+    res.render('artist/edit', {editArtist})
+  }
+  catch(error) {
+    console.log(error);
+    next();
+  }
+}); 
+
+router.post("/edit/:userId", async (req, res, next) => {
+  try {
+    const { userId } = req.params
+    const {username, firstName, lastName} = req.body 
+
+    const editUser = await User.findByIdAndUpdate(userId, {username, firstName, lastName});
+    res.redirect(`/auth/profile/${userId}`);
+} catch (error) {
+    console.log(error);
+    next(error);
+}
+});
+
+//Delete artist
+
+router.get('/user/:userId/delete', async (req, res, next) => {
+  try {
+    const { id } = req.params
+    const deleteArtist = await User.findByIdAndRemove(id);
+    res.redirect('/');
+  }
+  catch(error) {
+    console.log(error);
+    next();
+  }
+});
 
 //Get collector
 
@@ -236,7 +276,7 @@ router.post("/collector/:id", async (req, res, next) => {
     const {firstName, lastName} = req.body;
     const id = req.params.id
     const updatedUser = await User.findByIdAndUpdate(id, {firstName, lastName});
-    res.redirect("/login")
+    res.redirect("/auth/login")
   } catch(error) {
     console.log(error);
         next(error)
