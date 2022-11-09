@@ -241,11 +241,11 @@ router.post("/edit/:userId", async (req, res, next) => {
 
 //Delete artist
 
-router.get('/user/:userId/delete', async (req, res, next) => {
+router.get('/delete/:userId/', async (req, res, next) => {
   try {
     const { id } = req.params
     const deleteArtist = await User.findByIdAndRemove(id);
-    res.redirect('/');
+    res.redirect('/nfts/gallery');
   }
   catch(error) {
     console.log(error);
