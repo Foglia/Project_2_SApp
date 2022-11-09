@@ -1,12 +1,12 @@
-<form action="/nfts/edit/{{_id}}" method="POST" enctype='multipart/form-data'>
+<form action="/nfts/edit/{{editNft._id}}" method="POST" enctype='multipart/form-data'>
   <label for="">Title:</label>
-  <input type="text" name="title" id="" value='{{title}}'>
+  <input type="text" name="title" id="" value='{{editNft.title}}'>
   <label for="">Description:</label>
-  <input type="textarea" name="description" rows="5" cols="10" class=''>{{description}}</textarea>
+  <input type="textarea" name="description" rows="5" cols="10" class=''>{{editNft.description}}</textarea>
   <label for="">Value:</label>
-  <input type="number" name="value" id="" value='{{value}}'>
+  <input type="number" name="value" id="" value='{{editNft.value}}'>
 
-  <input type='text' value='{{imgUrl}}' name='currentImage' hidden/></label>
+  <input type='text' value='{{editNft.imgUrl}}' name='currentImage' hidden/></label>
   <div class=''>
       <label for='image'>
         Image:
