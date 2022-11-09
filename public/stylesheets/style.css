@@ -33,6 +33,8 @@ li a {
   text-decoration: none;
 }
 
+/*index.hbs*/
+
 .title {
   text-align: center ;
   margin: 15vh;
@@ -45,6 +47,8 @@ li a {
   text-align: center;
   margin: 10vh;
 }
+
+/*login.hbs*/
 
 #login-form {
   text-align: center;
@@ -71,6 +75,8 @@ padding: 10px 20px;
 border: solid 1px skyblue;
 background: skyblue;
 }
+
+/*signup.hbs*/
 
 #form{
   text-align: center;
@@ -108,6 +114,9 @@ border: solid 1px skyblue;
 background: skyblue;
 }
 
+
+/*new-artist.hbs*/
+
 .new-artist{
   text-align: center;
 
@@ -136,6 +145,9 @@ border: solid 1px skyblue;
 background: skyblue;
 margin-left: 8vh;
 }
+
+
+/*new-nft.hbs*/
 
 #titlenft{
   text-align: center;
