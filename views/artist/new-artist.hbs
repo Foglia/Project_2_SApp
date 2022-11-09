@@ -1,13 +1,21 @@
 <form action="/auth/artist/{{_id}}" method="POST">
-
+<div class="new-artist">
+<h1>Welcome!</h1>
+</div>
+<div id="firstname">
   <label for="">First Name:</label>
   <input type="text" name="firstName" id="">
+  </div>
+  <div id="lastname">
   <label for="">Last Name:</label>
   <input type="text" name="lastName" id="">
+  </div>
+  <div id="bio">
   <label for="">Bio:</label>
+  
   <textarea name="bio" rows="5" cols="10"></textarea>
-
-  <button type="submit">Create your Profile</button>
+</div>
+  <button id="newartistbutton" type="submit">Create your Profile</button>
 </form>
 
 
