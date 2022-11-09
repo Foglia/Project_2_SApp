@@ -1,25 +1,23 @@
-<h1>{{user.accountType}} </h1><h1>Profile</h1>
+<h1>NNFT {{user.accountType}} Profile</h1>
 <hr/>
-
 <div>
     <h2>{{user.firstName}} {{user.lastName}}</h2>
-
     <h3>Works:</h3>
-    
-    <ul>
-
+<div class="art-profile">    
 {{#each user.uploads}}
-<img src="{{imgUrl}}" alt="{{title}}">
-<h3>{{title}}</h3>
+<div class="artist-gallery">
+  <a target="_blank" href="/auth/profile/{{author._id}}">
+    <img src='{{imgUrl}}' alt='{{title}}' width="600" height="400">
+  </a>
+  <h3>{{title}}</h3>
+  <p>{{description}}</p>
+  <p>Created By:{{author.username}}</p>
+</div>
 {{/each}}
-
-    </ul>
- {{#ifEquals userId currentUser._id}}
+</div>
+{{#ifEquals userId currentUser._id}}
      <a href='/auth/delete/{{_id}}' class='btn btn-primary'>Delete Profile</a>
      <a href='/auth/edit/{{user._id}}' class='btn btn-primary'>Edit Profile</a>
-     <a href='/nfts/create' class='btn btn-primary'>Create a New NFT</a>
-
-
 {{/ifEquals}}
 </div>
 
