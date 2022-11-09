@@ -1,6 +1,8 @@
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
 }
 
 a {
@@ -30,6 +32,22 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
 }
+
+.title {
+  text-align: center ;
+  margin: 15vh;
+}
+
+.subtitle{
+  text-align: center;
+  margin: 10vh;
+}
+
+#login-form {
+  text-align: center;
+}
+
+
 
 
 
