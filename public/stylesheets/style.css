@@ -1,4 +1,10 @@
 
+.homepage{
+  background-color: skyblue;
+  font-family: 'Engender Mod', sans-serif;
+  color: white;
+                                                
+}
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -49,7 +55,17 @@ li a {
 }
 
 /*login.hbs*/
-
+.logincontainer{
+  background: hsl(0deg 0% 100%);
+		box-shadow: 0 0 2em hsl(231deg 62% 94%);
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+    gap: 0.5em;
+		border-radius: 20px;
+		color: hsl(0deg 0% 30%);
+    margin-top: 5vh;
+}
 #login-form {
   text-align: center;
   
@@ -58,12 +74,36 @@ li a {
   text-align: center;
   margin: 5vh;
   margin-right: 5vh;
+  background: hsl(0deg 0% 100%);
+		box-shadow: 0 0 2em hsl(231deg 62% 94%);
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+    gap: 0.5em;
+		border-radius: 20px;
+		color: hsl(0deg 0% 30%);
 }
 #password{
+  margin: 5vh;
   text-align: center;
   margin-right: 5vh;
+  background: hsl(0deg 0% 100%);
+		box-shadow: 0 0 2em hsl(231deg 62% 94%);
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+    gap: 0.5em;
+		border-radius: 20px;
+		color: hsl(0deg 0% 30%); 
+}
+
+#inputlogin{
+  outline: none;
+			border: none;
+			
 }
 #loginbutton {
+  border-radius: 30px;
   margin: 5vh;
   outline: none;
 cursor: pointer;
@@ -77,32 +117,83 @@ background: skyblue;
 }
 
 /*signup.hbs*/
-
+.signupcontainer{
+  background: hsl(0deg 0% 100%);
+		box-shadow: 0 0 2em hsl(231deg 62% 94%);
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+    gap: 0.5em;
+		border-radius: 20px;
+		color: hsl(0deg 0% 30%);
+    margin-top: 5vh;
+}
 #form{
   text-align: center;
   
+}
+#inputsignup{
+  width: 105px;
+  outline: none;
+  border: none;
 }
 #username{
   text-align: center;
   margin: 5vh;
   margin-right: 6vh;
+  background: hsl(0deg 0% 100%);
+		box-shadow: 0 0 2em hsl(231deg 62% 94%);
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+    gap: 0.5em;
+		border-radius: 20px;
+		color: hsl(0deg 0% 30%);
 }
 #emailsignup{
   text-align: center;
   margin: 5vh;
   margin-right: 6vh;
+  background: hsl(0deg 0% 100%);
+		box-shadow: 0 0 2em hsl(231deg 62% 94%);
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+    gap: 0.5em;
+		border-radius: 20px;
+		color: hsl(0deg 0% 30%);
 }
 #passwordsignup{
   text-align: center;
   margin: 5vh;
   margin-right: 6vh;
+  background: hsl(0deg 0% 100%);
+		box-shadow: 0 0 2em hsl(231deg 62% 94%);
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+    gap: 0.5em;
+		border-radius: 20px;
+		color: hsl(0deg 0% 30%);
 }
 #typeofuser{
   text-align: center;
   margin: 5vh;
   margin-right: 7vh;
 }
+#selector{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  
+  cursor: pointer;
+  position: relative;
+  z-index: 20; 
+}
 #signupbutton{
+  margin: 5vh;
+  border-radius: 30px;
   outline: none;
 cursor: pointer;
 text-align: center;
@@ -115,7 +206,7 @@ background: skyblue;
 }
 
 
-/*new-artist.hbs*/
+/*new-artist.hbs
 
 .new-artist{
   text-align: center;
@@ -134,6 +225,7 @@ background: skyblue;
   margin: 5vh;
 }
 #newartistbutton{
+  border-radius: 30px;
   outline: none;
 cursor: pointer;
 text-align: center;
@@ -144,29 +236,57 @@ padding: 10px 20px;
 border: solid 1px skyblue;
 background: skyblue;
 margin-left: 8vh;
+}*/
+
+
+/*new-nft.hbs
+#inputcreatenft{
+  outline: none;
+  border: none;
 }
-
-
-/*new-nft.hbs*/
-
 #titlenft{
   text-align: center;
   margin: 5vh;
   margin-left: 6vh;
+  background: hsl(0deg 0% 100%);
+  box-shadow: 0 0 2em hsl(231deg 62% 94%);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: hsl(0deg 0% 30%);
 }
 #description{
   text-align: center;
   margin: 5vh;
+  background: hsl(0deg 0% 100%);
+  box-shadow: 0 0 2em hsl(231deg 62% 94%);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: hsl(0deg 0% 30%);
 }
 #value{
   text-align: center;
   margin: 5vh;
+  background: hsl(0deg 0% 100%);
+  box-shadow: 0 0 2em hsl(231deg 62% 94%);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: hsl(0deg 0% 30%);
 }
 #file{
   text-align: center;
   margin: 5vh;
 }
 #nftbutton{
+  border-radius: 30px;
   outline: none;
 cursor: pointer;
 text-align: center;
@@ -177,7 +297,78 @@ padding: 10px 20px;
 border: solid 1px skyblue;
 background: skyblue;
 margin-left: 10vh;
+}*/
+
+/*edit.hbs
+.editcontainer{
+  background: hsl(0deg 0% 100%);
+		box-shadow: 0 0 2em hsl(231deg 62% 94%);
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+    gap: 0.5em;
+		border-radius: 20px;
+		color: hsl(0deg 0% 30%);
 }
+
+/*#inputeditartist{
+  outline: none;
+  border: none;
+}
+.usernameeditprofile{
+  text-align: center;
+  margin: 5vh;
+  margin-right: 6vh;
+  background: hsl(0deg 0% 100%);
+		box-shadow: 0 0 2em hsl(231deg 62% 94%);
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+    gap: 0.5em;
+		border-radius: 20px;
+		color: hsl(0deg 0% 30%);
+}
+.firstnameedit{
+  text-align: center;
+  margin: 5vh;
+  margin-right: 6vh;
+  background: hsl(0deg 0% 100%);
+		box-shadow: 0 0 2em hsl(231deg 62% 94%);
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+    gap: 0.5em;
+		border-radius: 20px;
+		color: hsl(0deg 0% 30%);
+}
+.lastnameedit{
+  text-align: center;
+  margin: 5vh;
+  margin-right: 6vh;
+  background: hsl(0deg 0% 100%);
+		box-shadow: 0 0 2em hsl(231deg 62% 94%);
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+    gap: 0.5em;
+		border-radius: 20px;
+		color: hsl(0deg 0% 30%);
+}
+#editprofilebutton{
+  border-radius: 30px;
+  outline: none;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+font: bold 12px Arial, Helvetica, sans-serif;
+color: #fff;
+padding: 10px 20px;
+border: solid 1px skyblue;
+background: skyblue;
+margin-left: 8vh;
+}*/
+
+
 /*GALLERY Basics  */
 /* div.gallery {
   align-content: center;

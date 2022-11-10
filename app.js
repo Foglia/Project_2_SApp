@@ -18,6 +18,10 @@ hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
   return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
 });
 
+hbs.registerHelper('ifIncludes', function(arg1, arg2, options) {
+  return (arg1.includes(arg2)) ? options.fn(this) : options.inverse(this);
+});
+
 const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware

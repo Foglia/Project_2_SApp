@@ -50,15 +50,20 @@ router.get('/gallery', async (req, res, next) => {
     let userId;
     if(req.session.currentUser){
        userId = req.session.currentUser._id;
+
     }
+
     const nftsFromDb = await Nft.find().populate("author"); //all nfts
-    res.render('nfts/nft-list', { userId, nftsFromDb, currentUser})
+
+    res.render('nfts/nft-list', {userId, nftsFromDb, currentUser })
   }
     catch(error) {
       console.log(error);
       next();
   }
 });
+
+
 
 //edit nft
 router.get('/edit/:id', async (req, res, next) => {

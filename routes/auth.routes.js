@@ -16,22 +16,6 @@ const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 
-//Delete artist
-
-router.get('/delete/:userId', async (req, res, next) => {
-  try {
-    const { id } = req.params
-    const deleteArtist = await User.findByIdAndDelete(id);
-    const currentUser = req.session.currentUser
-    console.log(currentUser)
-    res.redirect('/');
-  }
-  catch(error) {
-    console.log(error);
-    next();
-  }
-});
-
 
 // GET /auth/signup
 router.get("/signup", isLoggedOut, (req, res) => {
@@ -257,6 +241,8 @@ router.post("/edit/:userId", async (req, res, next) => {
     next(error);
 }
 });
+
+
 
 
 //Get collector
