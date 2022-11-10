@@ -9,6 +9,14 @@ const userSchema = new Schema(
       unique: true,
       trim: true,
     },
+
+    firstName: {
+      type: String,
+    },
+    lastName: {
+      type: String,
+    },
+    
     email: {
       type: String,
       required: true,
@@ -20,14 +28,23 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    //necesitamos poner artist/colector
+    accountType: {
+    type: String,
+    required: true,
+    enum: ["Artist", "Collector"]
+    },
+
+    
+    uploads: [{type: Schema.Types.ObjectId, ref:"Nft"}],
+    favorites: [{type: Schema.Types.ObjectId, ref:"Nft"}],
+    bought: [{type: Schema.Types.ObjectId, ref:"Nft"}],
   },
   {
+    //necesitamos poner artist/colector,
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
   }
 );
 
 const User = model("User", userSchema);
-
 module.exports = User;

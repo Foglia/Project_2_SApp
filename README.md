@@ -36,19 +36,27 @@ NFTrade is a platform where artists can upload their nfts and create a personal 
 | `GET`      | `/login`                           | Renders `login` form view.                                   |                                                          |
 | `POST`     | `/login`                           | Sends Login form data to the server.                         | { email, password } and type of user                                      |
 | `GET`      | `/signup`                          | Renders `signup` form view.                                  |                                                          |
-| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  email, password  } and type of user                                   |
-| `GET`      | `/private/edit-profile`            | Private route. Renders `edit-profile` form view.             |  Info of the user type: Artist or Collector                                                        |
-| `PUT`      | `/private/edit-profile`            | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
-| `GET`      | `/nft`               | Private route. Render the `favorites` view.                  |                                                          |
-| `POST`     | `/artist/nft/`              | Private route. Adds a new NFT for the current user.     |                                |
-| `DELETE`   | `/private/profile/{_id} | Private route. Deletes the existing collector from the current user. |                                                          |
-| `GET`      | `/nft`                     | Renders `nft-gallery` view.                              |                                                          |
+
+| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | *see the details on Artist, Collector or NFT
+                                    |
+| `GET`      | `/private/edit-profile`            | Private route(s) we will need 3, one for each model (artist-profile, collector-profile and nft-profile ). Renders `edit-profile` form view.             |                                                          |
+| `PUT`      | `/private/edit-profile`            | Private route. Sends edit-profile info to server and updates artist/collector/nft in DB. | |
+| `GET`      | `/private/favorites`               | Private route. Render the `favorites` view.                  |                                                          |
+| `POST`     | `/private/favorites/`              | Private route. Adds a new favorite for the current user.     | { name, cuisine, city, }                                 |
+| `GET`   | `/nft/details` | Private route. Deletes the existing favorite from the current user. |                     |
+| `GET`      | `/nft`                     | Renders `nft-gallery` view.                                                     |
+| `GET`      | `/artist/details/:id`         | Renders `artist-details` view for the particular restaurant. |        
+| `GET`      | `/nft`                     | Renders `nft-gallery` view.                                                   |
+                         |                                                          |
+
 
 
 
 
 
 ## Models
+
+
 
 User model
 ```javascript
@@ -59,6 +67,25 @@ User model
   favorites: [FavoriteId],
 }
 
+
+```
+
+Nft model 
+
+{
+  title: String,
+  value: number,
+  favorites: [FavoriteId],
+}
+
+Collector model
+
+{
+
+
+}
+
+Favorites model
 
 User artist model
 ```javascript
@@ -136,14 +163,14 @@ NFT Model
 
 ## API's
 
+
 - None, they would be created
+
 
 <br>
 
 
 ## Packages
-
-
 
 <br>
 
@@ -186,5 +213,5 @@ The url to your presentation slides
 ### Contributors
 Flavia Fogliato - [`Foglia`](https://github.com/Foglia) - [`Flavia Fogliato`](https://www.linkedin.com/in/flaviafogliato)
 
-Andrea Leonetti - [`ciroandrealeonetti`](https://github.com/ciroandrealeonetti) - [`Andrea Leonetti `](https://www.linkedin.com/in/ciroandrealeonetti/)
 
+Andrea Leonetti - [`ciroandrealeonetti`](https://github.com/ciroandrealeonetti) - [`Andrea Leonetti `](https://www.linkedin.com/in/ciroandrealeonetti/)

@@ -1,0 +1,30 @@
+
+<form action="/nfts/nfts-list" method="GET">
+<h1>Gallery</h1>
+
+<div class="gallery">
+{{#each nftsFromDb}}
+    <div class="card">
+      <div class="card-image">
+        <a href="#">
+          <img src='{{imgUrl}}' alt='{{title}}' width="600" height="400"/>
+        </a>
+      </div>
+      <div class="card-description">
+        <h3>{{title}}</h3>
+        <p>{{value}} ETH</p>
+        <p>{{description}}</p>
+        <a href="/auth/profile/{{author._id}}"><p style="color: skyblue">Created By:<p>{{author.username}}</a>
+          {{#ifEquals ../userId author._id}}
+          <a href='/nfts/delete/{{_id}}' class='btn btn-primary'>Delete</a>
+          <a href='/nfts/edit/{{_id}}' class='btn btn-primary'>Edit</a>
+          {{/ifEquals}}
+      </div>
+    </div>
+{{/each}}
+</div>
+
+
+
+
+

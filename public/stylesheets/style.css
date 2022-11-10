@@ -1,6 +1,10 @@
+@font-face{font-family:poppins;font-style:normal;font-weight:400;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Regular.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:400;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Italic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:250;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Thin.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:250;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ThinItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:275;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraLight.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:275;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraLightItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:300;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Light.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:300;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-LightItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:500;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Medium.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:500;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-MediumItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:600;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-SemiBold.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:600;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-SemiBoldItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:700;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Bold.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:700;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-BoldItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:800;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraBold.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:800;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraBoldItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:900;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Black.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:900;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-BlackItalic.woff) format('woff')}
+
 body {
+  font-family:'Poppins', sans-serif;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
 }
 
 a {
@@ -9,4 +13,237 @@ a {
 
 h1 {
   color: 15px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: skyblue;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/*index.hbs*/
+
+.title {
+  text-align: center ;
+  margin: 15vh;
+  margin-left: 10vh;
+
+  
+}
+
+.subtitle{
+  text-align: center;
+  margin: 10vh;
+}
+
+/*login.hbs*/
+
+#login-form {
+  text-align: center;
+  
+}
+#email{
+  text-align: center;
+  margin: 5vh;
+  margin-right: 5vh;
+}
+#password{
+  text-align: center;
+  margin-right: 5vh;
+}
+#loginbutton {
+  margin: 5vh;
+  outline: none;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+font: bold 12px Arial, Helvetica, sans-serif;
+color: #fff;
+padding: 10px 20px;
+border: solid 1px skyblue;
+background: skyblue;
+}
+
+/*signup.hbs*/
+
+#form{
+  text-align: center;
+  
+}
+#username{
+  text-align: center;
+  margin: 5vh;
+  margin-right: 6vh;
+}
+#emailsignup{
+  text-align: center;
+  margin: 5vh;
+  margin-right: 6vh;
+}
+#passwordsignup{
+  text-align: center;
+  margin: 5vh;
+  margin-right: 6vh;
+}
+#typeofuser{
+  text-align: center;
+  margin: 5vh;
+  margin-right: 7vh;
+}
+#signupbutton{
+  outline: none;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+font: bold 12px Arial, Helvetica, sans-serif;
+color: #fff;
+padding: 10px 20px;
+border: solid 1px skyblue;
+background: skyblue;
+}
+
+
+/*new-artist.hbs*/
+
+.new-artist{
+  text-align: center;
+
+}
+#firstname{
+  text-align: center;
+  margin: 5vh;
+}
+#lastname{
+  text-align: center;
+  margin: 5vh;
+}
+#bio{
+  text-align: center;
+  margin: 5vh;
+}
+#newartistbutton{
+  outline: none;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+font: bold 12px Arial, Helvetica, sans-serif;
+color: #fff;
+padding: 10px 20px;
+border: solid 1px skyblue;
+background: skyblue;
+margin-left: 8vh;
+}
+
+/* Gallery*/
+
+.gallery {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+div.card {
+  max-width: 100%;
+  height: auto;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px #1b1b1b33;
+  margin: 15px;
+  transition: all 0.3s;
+}
+
+div.card-image {
+  max-height: auto;
+  max-width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+div.card-image img {
+  width: 100%;
+  max-width: 100%;
+  height: 230px;
+  border-radius: 5px 5px 0 0;
+  transition: all 0.3s;
+}
+
+div.card-description {
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 0 0 5px 5px;
+  padding: 25px;
+}
+
+div.card-description h3 {
+  color: rgb(92, 92, 150);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+div.card-description p {
+  color: purple;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+div.card-description a {
+  color: rgb(194, 141, 194);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+div.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px -5px rgba(10, 16, 34, 0.2);
+}
+
+div.card-image img:hover {
+  opacity: 0.8;
+}
+
+/* artist gallery */
+
+.art-profile {
+  width: 100%;
+  height: 50%;
+  margin: 5px;
+}
+
+div.artist-gallery {
+  padding: 25px;
+  margin: 15px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.artist-gallery:hover {
+  border: 1px solid #777;
+}
+
+div.artist-gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  margin: 25px;
+  width: 20px;
+  text-align: center;
 }

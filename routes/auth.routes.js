@@ -15,6 +15,24 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+
+// //Delete artist
+
+// router.get('/delete/:userId', async (req, res, next) => {
+//   try {
+//     const { id } = req.params
+//     const deleteArtist = await User.findByIdAndDelete(id);
+//     const currentUser = req.session.currentUser
+//     console.log(currentUser)
+//     res.redirect('/');
+//   }
+//   catch(error) {
+//     console.log(error);
+//     next();
+//   }
+// });
+
+
 // GET /auth/signup
 router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
@@ -22,7 +40,7 @@ router.get("/signup", isLoggedOut, (req, res) => {
 
 // POST /auth/signup
 router.post("/signup", isLoggedOut, (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, accountType } = req.body;
 
   // Check that username, email, and password are provided
   if (username === "" || email === "" || password === "") {
@@ -61,10 +79,10 @@ router.post("/signup", isLoggedOut, (req, res) => {
     .then((salt) => bcrypt.hash(password, salt))
     .then((hashedPassword) => {
       // Create a user and save it in the database
-      return User.create({ username, email, password: hashedPassword });
+      return User.create({ username, email, password: hashedPassword, accountType });
     })
     .then((user) => {
-      res.redirect("/auth/login");
+      res.redirect(`/auth/user/${user._id}`)
     })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -135,6 +153,11 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           // Remove the password field
           delete req.session.currentUser.password;
 
+          //app.locals acts like a session but for the views
+          req.app.locals.user = user.toObject()
+          delete req.app.locals.user.password;
+
+
           res.redirect("/");
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
@@ -144,6 +167,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 
 // GET /auth/logout
 router.get("/logout", isLoggedIn, (req, res) => {
+  req.app.locals.user = false
   req.session.destroy((err) => {
     if (err) {
       res.status(500).render("auth/logout", { errorMessage: err.message });
@@ -153,5 +177,124 @@ router.get("/logout", isLoggedIn, (req, res) => {
     res.redirect("/");
   });
 });
+
+//Get /artist
+
+router.get("/user/:userId", async (req, res, next) => {
+  const {userId} = req.params
+  const currentUser = req.session.user
+  try {
+    const user = await User.findById(userId)
+if (user.accountType === "Artist") {
+  res.render("artist/new-artist", user)
+} else {
+  res.render("collector/new-collector", user)
+}
+    
+  } catch (error) {
+    console.log(error);
+        next(error)
+  }
+});
+
+
+router.post("/artist/:id", async (req, res, next) => {
+  try {
+    const {firstName, lastName, bio} = req.body;
+    const id = req.params.id
+    const updatedUser = await User.findByIdAndUpdate(id, {firstName, lastName, bio});
+    res.redirect("/auth/login")
+  } catch(error) {
+    console.log(error);
+        next(error)
+  }
+});
+
+//Get artist profile
+
+router.get("/profile/:userId", async (req, res, next) => {
+  const {userId} = req.params
+  const currentUser = req.session.currentUser
+  try {
+    const user = await User.findById(userId).populate("uploads")
+
+if (user.accountType === "Artist") {
+  res.render("artist/artist-profile", {user, currentUser, userId})
+} else {
+  res.render("collector/collector-profile", {user, currentUser, userId})
+}
+    
+  } catch (error) {
+    console.log(error);
+        next(error)
+  }
+});
+
+//Edit artist profile
+
+router.get('/edit/:userId', async (req, res, next) => {
+  try {
+    const  id  = req.params.userId
+    const editArtist = await User.findById(id);
+
+    res.render('artist/edit', {editArtist})
+  }
+  catch(error) {
+    console.log(error);
+    next();
+  }
+}); 
+
+router.post("/edit/:userId", async (req, res, next) => {
+  try {
+    const { userId } = req.params
+    const {username, firstName, lastName} = req.body 
+
+    const editUser = await User.findByIdAndUpdate(userId, {username, firstName, lastName});
+    res.redirect(`/auth/profile/${userId}`);
+} catch (error) {
+    console.log(error);
+    next(error);
+}
+});
+
+
+//Get collector
+
+router.get("/user/:userId", async (req, res, next) => {
+  const {userId} = req.params
+  const currentUser = req.session.user
+  try {
+    const user = await User.findById(userId)
+if (user.accountType === "Collector") {
+  res.render("collector/new-collector", user)
+} else {
+  res.render("artist/new-artist", user)
+}
+    
+  } catch (error) {
+    console.log(error);
+        next(error)
+  }
+});
+
+router.post("/collector/:id", async (req, res, next) => {
+  try {
+    const {firstName, lastName} = req.body;
+    const id = req.params.id
+    const updatedUser = await User.findByIdAndUpdate(id, {firstName, lastName});
+    res.redirect("/auth/login")    
+  } catch(error) {
+    console.log(error);
+        next(error)
+  }
+});
+
+
+
+
+
+
+
 
 module.exports = router;
