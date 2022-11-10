@@ -1,9 +1,19 @@
 <form action="/auth/collector/{{_id}}" method="POST">
-  <label for="">First Name:</label>
-  <input type="text" name="firstName" id="">
-  <label for="">Last Name:</label>
-  <input type="text" name="lastName" id="">
+<div class="new-artist">
+<h1>Welcome to NNFT!</h1>
+</div>
 
+<div class="artist-container">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="artist-fname" name="firstname" placeholder="Your name..">
 
-  <button type="submit">Create your profile</button>
-</form>
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="lname">Short Bio</label>
+    <input type="text" id="lname" name="lastname" placeholder="About you..">
+  
+    <input type="submit" value="Create!">
+  </form>
+</div>

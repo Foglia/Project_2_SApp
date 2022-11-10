@@ -1,13 +1,16 @@
-<br>
-<br>
 <form action="/nfts/create" method="POST" enctype='multipart/form-data'>
-  <div id="titlenft">
+<div class="new-nft">
+<h1>Create a New NNFT</h1>
+</div>
+
+<div class="nft-container">
+  <div id="title">
   <label for="">Title:</label>
   <input type="text" name="title" id="">
   </div>
   <div id="description">
   <label for="">Description:</label>
-  <input type="textarea" name="description" rows="5" cols="10"></textarea>
+  <input type="text" name="description"/>
   </div>
   <div id="value">
   <label for="">Value:</label>
@@ -15,7 +18,9 @@
   </div>
   <div id="file">
   <label for='image'>Image:<input type='file' name='image'/></label>
+  </div>
+
+   <input type="submit" value="Create a NNFT">
+</form>
 </div>
 
-  <button id="nftbutton" type="submit">Create NFT</button>
-</form>

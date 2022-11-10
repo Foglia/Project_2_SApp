@@ -1,9 +1,7 @@
-{{!-- Remember: match names back and front end --}}
-
 <div id="login-form">
   <h2>Log In</h2>
-  <form action="/auth/login" method="POST">
-
+<form action="/auth/login" method="POST">
+<div class="login-container">
 <div id="email">
     <label> Email
       <input type="email" name="email"  placeholder="Your email" />
@@ -16,10 +14,13 @@
     </div>
 
     <button id="loginbutton" type="submit">Log In</button>
-    
 
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
     {{/if}}
+   </div> 
   </form>
 </div>
+
+
+

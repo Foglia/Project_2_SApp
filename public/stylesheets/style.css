@@ -1,11 +1,12 @@
 @font-face{font-family:poppins;font-style:normal;font-weight:400;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Regular.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:400;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Italic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:250;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Thin.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:250;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ThinItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:275;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraLight.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:275;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraLightItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:300;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Light.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:300;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-LightItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:500;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Medium.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:500;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-MediumItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:600;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-SemiBold.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:600;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-SemiBoldItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:700;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Bold.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:700;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-BoldItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:800;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraBold.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:800;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraBoldItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:900;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Black.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:900;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-BlackItalic.woff) format('woff')}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 body {
   font-family:'Poppins', sans-serif;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  
 }
+
 
 a {
   color: #00b7ff;
@@ -40,9 +41,7 @@ li a {
 .title {
   text-align: center ;
   margin: 15vh;
-  margin-left: 10vh;
-
-  
+  margin-left: 10vh;  
 }
 
 .subtitle{
@@ -50,36 +49,9 @@ li a {
   margin: 10vh;
 }
 
-/*login.hbs*/
-
-#login-form {
-  text-align: center;
-  
-}
-#email{
-  text-align: center;
-  margin: 5vh;
-  margin-right: 5vh;
-}
-#password{
-  text-align: center;
-  margin-right: 5vh;
-}
-#loginbutton {
-  margin: 5vh;
-  outline: none;
-cursor: pointer;
-text-align: center;
-text-decoration: none;
-font: bold 12px Arial, Helvetica, sans-serif;
-color: #fff;
-padding: 10px 20px;
-border: solid 1px skyblue;
-background: skyblue;
-}
 
 /*signup.hbs*/
-
+/* 
 #form{
   text-align: center;
   
@@ -114,39 +86,95 @@ color: #fff;
 padding: 10px 20px;
 border: solid 1px skyblue;
 background: skyblue;
-}
+} */
 
 
 /*new-artist.hbs*/
 
-.new-artist{
-  text-align: center;
+.artist-container input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
+.artist-container input[type=submit] {
+  width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
-#firstname{
-  text-align: center;
-  margin: 5vh;
+
+.artist-container input[type=submit]:hover {
+  background-color:  rgb(92, 92, 150);
 }
-#lastname{
-  text-align: center;
-  margin: 5vh;
+
+.artist-container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
-#bio{
-  text-align: center;
-  margin: 5vh;
+
+/*new-nft*/
+
+.nft-container input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
-#newartistbutton{
-  outline: none;
-cursor: pointer;
-text-align: center;
-text-decoration: none;
-font: bold 12px Arial, Helvetica, sans-serif;
-color: #fff;
-padding: 10px 20px;
-border: solid 1px skyblue;
-background: skyblue;
-margin-left: 8vh;
+
+.nft-container input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
+
+.nft-container input[type=file], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.nft-container input[type=submit] {
+  width: 100%;
+  background-color:rgb(194, 141, 194)
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nft-container input[type=submit]:hover {
+  background-color:  rgb(92, 92, 150);
+}
+
+.nft-container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
 
 /* Gallery*/
 
@@ -247,3 +275,5 @@ div.desc {
   width: 20px;
   text-align: center;
 }
+
+
