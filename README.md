@@ -34,8 +34,9 @@ NFTrade is a platform where artists can upload their nfts and create a personal 
 | ---------- | ---------------------------------- | ------------------------------------------------------------ | -------------------------------------------------------- |
 | `GET`      | `/`                                | Main page route.  Renders home `index` view.                 |                                                          |
 | `GET`      | `/login`                           | Renders `login` form view.                                   |                                                          |
-| `POST`     | `/login`                           | Sends Login form data to the server.                         | { email, password }                                      |
+| `POST`     | `/login`                           | Sends Login form data to the server.                         | { email, password } and type of user                                      |
 | `GET`      | `/signup`                          | Renders `signup` form view.                                  |                                                          |
+
 | `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | *see the details on Artist, Collector or NFT
                                     |
 | `GET`      | `/private/edit-profile`            | Private route(s) we will need 3, one for each model (artist-profile, collector-profile and nft-profile ). Renders `edit-profile` form view.             |                                                          |
@@ -46,6 +47,7 @@ NFTrade is a platform where artists can upload their nfts and create a personal 
 | `GET`      | `/nft`                     | Renders `nft-gallery` view.                                                     |
 | `GET`      | `/artist/details/:id`         | Renders `artist-details` view for the particular restaurant. |        
 | `GET`      | `/nft`                     | Renders `nft-gallery` view.                                                   |
+                         |                                                          |
 
 
 
@@ -57,7 +59,6 @@ NFTrade is a platform where artists can upload their nfts and create a personal 
 
 
 User model
-
 ```javascript
 {
   name: String,
@@ -65,6 +66,7 @@ User model
   password: String,
   favorites: [FavoriteId],
 }
+
 
 ```
 
@@ -85,20 +87,86 @@ Collector model
 
 Favorites model
 
+User artist model
 ```javascript
-{
-  placeId: String,
-}
+  {
+    username: {
+      type: String,
+      required: false,
+      unique: true,
+      trim: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+      lowercase: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    upload: {
+        type: Image
+    }
+  },
+
+User Collector model 
+```javascript
+  {
+    username: {
+      type: String,
+      required: false,
+      unique: true,
+      trim: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+      lowercase: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    favorites: [],
+  },
+
+NFT Model
+```javascript
+  {
+    title: {
+      type: String,
+      required: false,
+      unique: true,
+      trim: true,
+    },
+    value: {
+      type: Number,
+      required: true,
+      unique: true,
+      trim: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+  },
+
 
 ```
-
-
 
 <br>
 
 ## API's
 
-None
+
+- None, they would be created
+
+
 <br>
 
 
@@ -144,5 +212,6 @@ The url to your presentation slides
 
 ### Contributors
 Flavia Fogliato - [`Foglia`](https://github.com/Foglia) - [`Flavia Fogliato`](https://www.linkedin.com/in/flaviafogliato)
+
 
 Andrea Leonetti - [`ciroandrealeonetti`](https://github.com/ciroandrealeonetti) - [`Andrea Leonetti `](https://www.linkedin.com/in/ciroandrealeonetti/)
