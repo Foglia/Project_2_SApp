@@ -1,3 +1,4 @@
+@font-face{font-family:poppins;font-style:normal;font-weight:400;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Regular.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:400;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Italic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:250;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Thin.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:250;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ThinItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:275;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraLight.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:275;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraLightItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:300;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Light.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:300;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-LightItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:500;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Medium.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:500;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-MediumItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:600;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-SemiBold.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:600;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-SemiBoldItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:700;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Bold.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:700;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-BoldItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:800;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraBold.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:800;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraBoldItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:900;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Black.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:900;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-BlackItalic.woff) format('woff')}
 
 .homepage{
   background-color: skyblue;
@@ -6,6 +7,7 @@
                                                 
 }
 body {
+  font-family:'Poppins', sans-serif;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   
@@ -238,173 +240,7 @@ background: skyblue;
 margin-left: 8vh;
 }*/
 
-
-/*new-nft.hbs
-#inputcreatenft{
-  outline: none;
-  border: none;
-}
-#titlenft{
-  text-align: center;
-  margin: 5vh;
-  margin-left: 6vh;
-  background: hsl(0deg 0% 100%);
-  box-shadow: 0 0 2em hsl(231deg 62% 94%);
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-  border-radius: 20px;
-  color: hsl(0deg 0% 30%);
-}
-#description{
-  text-align: center;
-  margin: 5vh;
-  background: hsl(0deg 0% 100%);
-  box-shadow: 0 0 2em hsl(231deg 62% 94%);
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-  border-radius: 20px;
-  color: hsl(0deg 0% 30%);
-}
-#value{
-  text-align: center;
-  margin: 5vh;
-  background: hsl(0deg 0% 100%);
-  box-shadow: 0 0 2em hsl(231deg 62% 94%);
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-  border-radius: 20px;
-  color: hsl(0deg 0% 30%);
-}
-#file{
-  text-align: center;
-  margin: 5vh;
-}
-#nftbutton{
-  border-radius: 30px;
-  outline: none;
-cursor: pointer;
-text-align: center;
-text-decoration: none;
-font: bold 12px Arial, Helvetica, sans-serif;
-color: #fff;
-padding: 10px 20px;
-border: solid 1px skyblue;
-background: skyblue;
-margin-left: 10vh;
-}*/
-
-/*edit.hbs
-.editcontainer{
-  background: hsl(0deg 0% 100%);
-		box-shadow: 0 0 2em hsl(231deg 62% 94%);
-		padding: 1em;
-		display: flex;
-		flex-direction: column;
-    gap: 0.5em;
-		border-radius: 20px;
-		color: hsl(0deg 0% 30%);
-}
-
-/*#inputeditartist{
-  outline: none;
-  border: none;
-}
-.usernameeditprofile{
-  text-align: center;
-  margin: 5vh;
-  margin-right: 6vh;
-  background: hsl(0deg 0% 100%);
-		box-shadow: 0 0 2em hsl(231deg 62% 94%);
-		padding: 1em;
-		display: flex;
-		flex-direction: column;
-    gap: 0.5em;
-		border-radius: 20px;
-		color: hsl(0deg 0% 30%);
-}
-.firstnameedit{
-  text-align: center;
-  margin: 5vh;
-  margin-right: 6vh;
-  background: hsl(0deg 0% 100%);
-		box-shadow: 0 0 2em hsl(231deg 62% 94%);
-		padding: 1em;
-		display: flex;
-		flex-direction: column;
-    gap: 0.5em;
-		border-radius: 20px;
-		color: hsl(0deg 0% 30%);
-}
-.lastnameedit{
-  text-align: center;
-  margin: 5vh;
-  margin-right: 6vh;
-  background: hsl(0deg 0% 100%);
-		box-shadow: 0 0 2em hsl(231deg 62% 94%);
-		padding: 1em;
-		display: flex;
-		flex-direction: column;
-    gap: 0.5em;
-		border-radius: 20px;
-		color: hsl(0deg 0% 30%);
-}
-#editprofilebutton{
-  border-radius: 30px;
-  outline: none;
-cursor: pointer;
-text-align: center;
-text-decoration: none;
-font: bold 12px Arial, Helvetica, sans-serif;
-color: #fff;
-padding: 10px 20px;
-border: solid 1px skyblue;
-background: skyblue;
-margin-left: 8vh;
-}*/
-
-
-/*GALLERY Basics  */
-/* div.gallery {
-  align-content: center;
-  margin: 5px;
-  border: 1px solid #ccc;
-  float: left;
-  max-width: 30%;
-  width: auto;
-  height: auto;
-}
-
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-.galleryinfo {
-  padding: 30px;
-}
-
-div.desc {
-  padding: 25px;
-  text-align: center;
-}
-
-.internalauth li {
-  font-size: 8px;
-  padding: 1px;
-  margin: 1px;
-} */
-
-/* Gallery another try */
+/* Gallery*/
 
 .gallery {
   display: flex;
@@ -461,7 +297,6 @@ div.card-description a {
   color: rgb(194, 141, 194);
   font-weight: 500;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 div.card:hover {
@@ -473,7 +308,34 @@ div.card-image img:hover {
   opacity: 0.8;
 }
 
+/* artist gallery */
 
+.art-profile {
+  width: 100%;
+  height: 50%;
+  margin: 5px;
+}
 
+div.artist-gallery {
+  padding: 25px;
+  margin: 15px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
 
+div.artist-gallery:hover {
+  border: 1px solid #777;
+}
 
+div.artist-gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  margin: 25px;
+  width: 20px;
+  text-align: center;
+}

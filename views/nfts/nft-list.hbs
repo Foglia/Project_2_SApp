@@ -12,7 +12,7 @@
         <h3>{{title}}</h3>
         <p>{{value}} ETH</p>
         <p>{{description}}</p>
-         <a href="/auth/profile/{{author._id}}">Created By:{{author.username}}</a>
+        <a href="/auth/profile/{{author._id}}"><p style="color: skyblue">Created By:<p>{{author.username}}</a>
           {{#ifEquals ../userId author._id}}
           <a href='/nfts/delete/{{_id}}' class='btn btn-primary'>Delete</a>
           <a href='/nfts/edit/{{_id}}' class='btn btn-primary'>Edit</a>
