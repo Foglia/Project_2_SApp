@@ -15,6 +15,24 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+
+// //Delete artist
+
+// router.get('/delete/:userId', async (req, res, next) => {
+//   try {
+//     const { id } = req.params
+//     const deleteArtist = await User.findByIdAndDelete(id);
+//     const currentUser = req.session.currentUser
+//     console.log(currentUser)
+//     res.redirect('/');
+//   }
+//   catch(error) {
+//     console.log(error);
+//     next();
+//   }
+// });
+
+
 // GET /auth/signup
 router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
@@ -240,19 +258,6 @@ router.post("/edit/:userId", async (req, res, next) => {
 }
 });
 
-//Delete artist
-
-router.get('/delete/:userId/', async (req, res, next) => {
-  try {
-    const { id } = req.params
-    const deleteArtist = await User.findByIdAndRemove(id);
-    res.redirect('/nfts/gallery');
-  }
-  catch(error) {
-    console.log(error);
-    next();
-  }
-});
 
 //Get collector
 
