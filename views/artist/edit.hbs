@@ -1,10 +1,15 @@
 <form action="/auth/edit/{{editArtist._id}}" method="POST">
-  <label for="">Username:</label>
-  <input type="text" name="username" id="">
-  <label for="">First Name:</label>
-  <input type="text" name="firstName" id="">
-  <label for="">Last Name:</label>
-  <input type="text" name="lastName" id="">
+<div class="artist-container">
 
-  <button type="submit">Edit your Profile</button>
-</form>
+    <label for="fname">First Name</label>
+    <input type="text" id="artist-fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="lname">Short Bio</label>
+    <input type="text" id="lname" name="lastname" placeholder="About you..">
+
+    <input type="submit" value="Save Changes">
+  </form>
+</div>

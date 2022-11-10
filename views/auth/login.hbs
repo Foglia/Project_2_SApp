@@ -1,25 +1,27 @@
-{{!-- Remember: match names back and front end --}}
-
+<div class="logincontainer"></div>
 <div id="login-form">
   <h2>Log In</h2>
-  <form action="/auth/login" method="POST">
-
+<form action="/auth/login" method="POST">
+<div class="login-container">
 <div id="email">
     <label> Email
-      <input type="email" name="email"  placeholder="Your email" />
+      <input id="inputlogin" type="email" name="email"  placeholder="" />
     </label>
 </div>
 <div id="password">
     <label> Password
-      <input type="password" name="password" placeholder="Your password" />
+      <input id="inputlogin" type="password" name="password" placeholder="" />
     </label>
     </div>
-
+</div>
     <button id="loginbutton" type="submit">Log In</button>
-    
 
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
     {{/if}}
+   </div> 
   </form>
 </div>
+
+
+
