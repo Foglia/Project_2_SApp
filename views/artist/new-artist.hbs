@@ -1,10 +1,12 @@
 <form action="/auth/artist/{{_id}}" method="POST">
 <div class="new-artist">
-<h1>Welcome to NNFT!</h1>
+<h1 id="gallery-title">Welcome to NNFT!</h1>
 </div>
-
+<div class="formbases">
 <div class="artist-container">
   <form action="/action_page.php">
+    <p><b>Tell us something about yourself:</b></p>
+    <hr>
     <label for="fname">First Name</label>
     <input type="text" id="artist-fname" name="firstname" placeholder="Your name..">
 
@@ -16,4 +18,5 @@
   
     <input type="submit" value="Submit">
   </form>
+</div>
 </div>

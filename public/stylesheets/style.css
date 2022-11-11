@@ -1,98 +1,216 @@
-@font-face{font-family:poppins;font-style:normal;font-weight:400;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Regular.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:400;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Italic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:250;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Thin.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:250;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ThinItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:275;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraLight.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:275;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraLightItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:300;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Light.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:300;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-LightItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:500;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Medium.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:500;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-MediumItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:600;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-SemiBold.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:600;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-SemiBoldItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:700;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Bold.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:700;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-BoldItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:800;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraBold.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:800;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-ExtraBoldItalic.woff) format('woff')}@font-face{font-family:poppins;font-style:normal;font-weight:900;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-Black.woff) format('woff')}@font-face{font-family:poppins;font-style:italic;font-weight:900;src:local('Poppins'),url(https://fonts.cdnfonts.com/s/16009/Poppins-BlackItalic.woff) format('woff')}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 body {
   font-family:'Poppins', sans-serif;
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 20px;
 }
 
+/* Navbar */
 
-a {
-  color: #00b7ff;
-}
-
-h1 {
-  color: 15px;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.topnav {
   overflow: hidden;
-  background-color: skyblue;
+  background-color: #333;
+  padding: 10px 26px 10px;
 }
 
-li {
+.topnav a {
   float: left;
-}
-
-li a {
   display: block;
-  color: white;
+  color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px 26px 10px;
   text-decoration: none;
+  font-size: 14px;
 }
 
-/*index.hbs*/
-
-.title {
-  text-align: center ;
-  margin: 15vh;
-  margin-left: 10vh;  
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
-.subtitle{
+.topnav a.active {
+  background-color:rgb(213, 29, 29);
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* Index */
+
+.mainsect {
+  background-color: #333;
+  background-image: url('/images/nanft.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100em;
   text-align: center;
-  margin: 10vh;
+  width: 100%;
+  height: 100%;
+}
+
+#nnfth {
+  font-size: clamp(3em, 4em + 1vw, 8em);  
+  text-align: center;
+}
+
+.mainsect h2 {
+  font-size: clamp(0.2em, 1em + 1vw, 1.5em);
+  text-align: center;
+}
+
+.mainsect section{
+  color: white;
+  background-color: rgba(83, 136, 147, 0.7);
+  padding: 2px;
+  margin: 30px;
+  color: white;
+  border-radius: 2px;
 }
 
 
-/*signup.hbs*/
-/* 
-#form{
-  text-align: center;
-  
+/*Log In and Sign UP forms*/
+
+.formcontainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
 }
-#username{
-  text-align: center;
-  margin: 5vh;
-  margin-right: 6vh;
+
+a{
+  text-decoration:none !important;
 }
-#emailsignup{
-  text-align: center;
-  margin: 5vh;
-  margin-right: 6vh;
+
+.myform{
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem;
+  margin-top: 3rem;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  pointer-events: auto;
+  background-color:rgba(83, 136, 147, 0.7);
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 1.1rem;
+  outline: 0;
+  max-width: 400px;
+  max-height: auto;
 }
-#passwordsignup{
-  text-align: center;
-  margin: 5vh;
-  margin-right: 6vh;
+
+.myform h1 {
+  color: white;
+
 }
-#typeofuser{
-  text-align: center;
-  margin: 5vh;
-  margin-right: 7vh;
+       
+.tx-tfm{
+ text-transform:uppercase;
+ }
+
+.form-group {
+  color: white;
+  margin-bottom: 10px;
 }
-#signupbutton{
-  outline: none;
-cursor: pointer;
+
+.form-control {
+  margin-top: 5px;
+  border: none;
+  padding: 10px;
+  width: 100%;
+}
+
+.mybtn{
+padding: 5px;
+margin: 2px;
+align-content: center;
+background-color: white;
+width: 100%;
+color:rgba(83, 136, 147, 0.7);
+}
+      
+.login-or {
+position: relative;
+color: #aaa;
+margin-top: 10px;
+margin-bottom: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+.span-or {
+display: block;
+position: absolute;
+left: 50%;
+top: -2px;
+margin-left: -25px;
+background-color: #fff;
+width: 50px;
 text-align: center;
-text-decoration: none;
-font: bold 12px Arial, Helvetica, sans-serif;
-color: #fff;
-padding: 10px 20px;
-border: solid 1px skyblue;
-background: skyblue;
-} */
+}
+
+.hr-or {
+height: 1px;
+margin-top: 0px !important;
+margin-bottom: 0px !important;
+}
+    
+form .error {
+color: #ff0000;
+background-color: black;
+padding: 25px;
+max-width: 200px;
+}
+#second{display:none;}
 
 
 /*new-artist.hbs*/
 
+.formbases {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  margin: 30px;
+  
+}
+
+.artist-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  background-color: #f2f2f2;
+  padding: 20px 30px;
+  width: 70vw;
+  max-width: 90vw;
+}
+
 .artist-container input[type=text], select {
-  width: 100%;
+  width: 90%;
   padding: 12px 20px;
   margin: 8px 0;
   display: block;
@@ -102,8 +220,8 @@ background: skyblue;
 }
 
 .artist-container input[type=submit] {
-  width: 100%;
-  background-color: #04AA6D;
+  width: 90%;
+  background-color: #5d7575;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -113,19 +231,27 @@ background: skyblue;
 }
 
 .artist-container input[type=submit]:hover {
-  background-color:  rgb(92, 92, 150);
-}
-
-.artist-container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+  width: 90%;
+  background-color: rgb(92, 92, 150);
 }
 
 /*new-nft*/
 
+.nft-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  text-align: left;
+  background-color: #f2f2f2;
+  padding: 40px 30px;
+  margin: 20;
+  width: 60vw;
+  max-width: 90vw;
+}
+
 .nft-container input[type=text], select {
-  width: 100%;
+  width: 90%;
   padding: 12px 20px;
   margin: 8px 0;
   display: block;
@@ -135,7 +261,7 @@ background: skyblue;
 }
 
 .nft-container input[type=number], select {
-  width: 100%;
+  width: 90%;
   padding: 12px 20px;
   margin: 8px 0;
   display: block;
@@ -145,18 +271,17 @@ background: skyblue;
 }
 
 .nft-container input[type=file], select {
-  width: 100%;
-  padding: 12px 20px;
+  width: 90%;
+  padding: 12px 2px;
   margin: 8px 0;
   display: block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: none;
   box-sizing: border-box;
 }
 
 .nft-container input[type=submit] {
-  width: 100%;
-  background-color:rgb(194, 141, 194);
+  width: 90%;
+  background-color:#333;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -166,22 +291,29 @@ background: skyblue;
 }
 
 .nft-container input[type=submit]:hover {
-  background-color:  rgb(92, 92, 150);
+  width: 90%;
+  background-color:#5d7575
 }
 
-.nft-container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
+/* Gallery*/
+
+.artist-title {
+  background-color: whitesmoke;
   padding: 20px;
 }
 
-
-/* Gallery*/
+#gallery-title {
+  text-align: left;
+  margin: 0;
+  padding: 20px;
+  color: white;
+}
 
 .gallery {
   display: flex;
   align-content: center;
   flex-wrap: wrap;
+  background-color: whitesmoke;
 }
 
 div.card {
@@ -192,12 +324,6 @@ div.card {
   box-shadow: 0 2px 4px #1b1b1b33;
   margin: 15px;
   transition: all 0.3s;
-}
-
-div.card-image {
-  max-height: auto;
-  max-width: 100%;
-  border-radius: 5px 5px 0 0;
 }
 
 div.card-image img {
@@ -211,7 +337,7 @@ div.card-image img {
 div.card-description {
   width: 100%;
   height: auto;
-  background-color: #ffffff;
+  max-width: 90%;
   border-radius: 0 0 5px 5px;
   padding: 25px;
 }
@@ -224,7 +350,7 @@ div.card-description h3 {
 }
 
 div.card-description p {
-  color: purple;
+  color:
   font-size: 14px;
   margin-bottom: 16px;
 }
@@ -248,16 +374,18 @@ div.card-image img:hover {
 
 .art-profile {
   width: 100%;
-  height: 50%;
-  margin: 5px;
+  height: 100vw;
+  background-color: whitesmoke;
 }
 
 div.artist-gallery {
-  padding: 25px;
-  margin: 15px;
-  border: 1px solid #ccc;
+  align-content: center;
+  padding: 35px 15px;
+  margin: 10px;
+  border: none;
   float: left;
   width: 180px;
+  max-height: auto;
 }
 
 div.artist-gallery:hover {
@@ -274,6 +402,16 @@ div.desc {
   margin: 25px;
   width: 20px;
   text-align: center;
+}
+
+/* edit artist profile */
+
+.artistbtn button {
+  margin: 0;
+  border: none;
+  background: none;
+  color: white;
+
 }
 
 

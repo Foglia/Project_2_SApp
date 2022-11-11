@@ -1,37 +1,45 @@
-<div class="signupcontainer">
-<div id="form">
-  <h2>Sign Up</h2>
-  <form action="/auth/signup" method="POST">
-<div id="username">
-    <label> Username
-      <input id="inputsignup" type="text" name="username" placeholder="Your username" />
-    </label>
-</div>
-<div id="emailsignup">
-    <label> Email
-      <input id="inputsignup" type="email" name="email" placeholder="Your email" />
-    </label>
-</div>
-<div id="passwordsignup">
-    <label> Password
-      <input id="inputsignup" type="password" name="password" placeholder="Your password" />
-    </label>
-</div>
-<div id="typeofuser">
-    <label for="user-select">Type of user:</label>
 
+          <div class="formcontainer">
+                  <div class="myform form">
+                        <div class="logo mb-3">
+                           <div class="col-md-12 text-center">
+                              <h1>NNFT SignUp</h1>
+                           </div>
+                        </div>
+                        <form action="/auth/signup" method="POST">
+                           <div class="form-group">
+                              <label for="username">Username</label>
+                              <input type="text"  name="username" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter Firstname">
+                           </div>
+                           <div class="form-group">
+                              <label for="email">Email address</label>
+                              <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                           </div>
+                           <div class="form-group">
+                              <label for="password">Password</label>
+                              <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+                           </div>
+                           <div class="form-group" id="typeofuser">
+                             <label for="user-select">Type of user:</label>
+                              <select id="selector" name="accountType" id="user-select">
+                               <option value="Artist">Artist</option>
+                               <option value="Collector">Collector</option>
+                            </select>
+                          </div>
+                           <div class="col-md-12 text-center mb-3">
+                              <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
+                           </div>
+                          {{#if errorMessage}}
+                          <p class="error">{{errorMessage}}</p>
+                          {{/if}}     
+                           <div class="col-md-12 ">
+                              <div class="form-group">
+                                 <p class="text-center"><a href="/auth/login" id="signin" style="color: black"><b>Already have an account?</b></a></p>
+                              </div>
+                           </div>
+                            </div>
+                        </form>
+                     </div>
+                  </div>
+                  
 
-    <select id="selector" name="accountType" id="user-select">
-      <option value="Artist">Artist</option>
-      <option value="Collector">Collector</option>
-    </select>
-</div>
-</div>
-    <button id="signupbutton" type="submit">Sign Up</button>
-
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
-</div>

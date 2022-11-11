@@ -1,85 +1,47 @@
 <html lang="en">
-
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{appTitle}}</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    
+    <link rel="stylesheet" href="/stylesheets/style.css" /> 
   </head>
-
-  <body>
-    <!--<css-doodle>
-  <style>
-    @grid: 50x1 / 50vmin;
-    :container {
-      perspective: 23vmin;
-    }
-    background: @m(
-      @r(200, 240), 
-      radial-gradient(
-        @p(#00b8a3, #f8f3a7, #f6416c, #ffde7d) 15%,
-        transparent 50%
-      ) @r(100%) @r(100%) / @r(1%, 3%) @lr no-repeat
-    );
-
-    @size: 80%;
-    @place-cell: center;
-
-    border-radius: 50%;
-    transform-style: preserve-3d;
-    animation: scale-up 20s linear infinite;
-    animation-delay: calc(@i * -.4s);
-
-    @keyframes scale-up {
-      0% {
-        opacity: 0;
-        transform: translate3d(0, 0, 0) rotate(0);
-      }
-      10% { 
-        opacity: 1; 
-      }
-      95% {
-        transform:
-          translate3d(0, 0, @r(50vmin, 55vmin))
-          rotate(@r(-360deg, 360deg));
-      }
-      100% {
-        opacity: 0;
-        transform: translate3d(0, 0, 1vmin);
-      }
-    }
-  </style>
-</css-doodle> -->
- <ul>
-  <li><a href="/">Home</a></li>
-  <li><a href="/nfts/gallery">Gallery</a></li>
+<body>
+<header>
+<div class="topnav" id="myTopnav">
+  <a href="/" style="color:red"><b>NNFT</b></a>
+  <a href="/">Home</a>
+  <a href="/nfts/gallery">Gallery</a>
   {{#unless currentUser}}
-  <li><a href="/auth/signup">SignUp</a></li>
-  <li><a href="/auth/login">LogIn</a></li>
+  <a href="/auth/signup">SignUp</a>
+  <a href="/auth/login">LogIn</a>
   {{/unless}}
   {{#if currentUser}}
-  <li><a href="/auth/logout">LogOut</a></li>
+  <a href="/auth/logout">LogOut</a>
   {{/if}}
   {{#if artist}}
-  <li><a href="/nfts/create">NFT Form</a></li>
+  <a href="/nfts/create">NNFT Form</a>
   {{/if}}
 
-{{!-- {{#if isLoggedIn}}
-  <li><a href="/auth/logout">LogOut</a></li>
-{{else}}
-  <li><a href="/auth/login">LogIn</a></li>
-{{/if}} --}}
- </ul>
-  {{!--  --}}
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+ </script>
+</header>
+<section class="mainsect">
   {{{body}}}
+</section>  
+<script src="/js/script.js"></script>
 
-    <script src="/js/script.js"></script>
-<!--<script src="https://unpkg.com/css-doodle@0.30.6/css-doodle.min.js"></script> -->
-
-
-  </body>
-
-</html>
+</body>

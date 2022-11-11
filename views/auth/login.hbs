@@ -1,27 +1,38 @@
-<div class="logincontainer"></div>
-<div id="login-form">
-  <h2>Log In</h2>
-<form action="/auth/login" method="POST">
-<div class="login-container">
-<div id="email">
-    <label> Email
-      <input id="inputlogin" type="email" name="email"  placeholder="" />
-    </label>
-</div>
-<div id="password">
-    <label> Password
-      <input id="inputlogin" type="password" name="password" placeholder="" />
-    </label>
-    </div>
-</div>
-    <button id="loginbutton" type="submit">Log In</button>
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-   </div> 
-  </form>
-</div>
-
-
-
+<div class="formcontainer">
+				<div class="myform form ">
+					 <div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<h1>NNFT Login</h1>
+						  </div>
+					    </div>
+                    <form action="/auth/login" method="POST">
+                           <div class="form-group">
+                              <label for="exampleInputEmail1">Email Adress</label>
+                              <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                           </div>
+                           <div class="form-group">
+                              <label for="exampleInputEmail1">Password</label>
+                              <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+                           </div>
+                           <div class="form-group">
+                              <p class="text-center">By signing up you accept our <spam style='color: black'>Terms Of Use</spam></p>
+                           </div>
+                           <div class="col-md-12 text-center ">
+                              <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+                           </div>
+                          {{#if errorMessage}}
+                          <p class="error">{{errorMessage}}</p>
+                          {{/if}}
+                           <div class="col-md-12 ">
+                              <div class="login-or">
+                                 <hr class="hr-or">
+                                 <span class="span-or">or</span>
+                              </div>
+                           </div>
+                        <div class="form-group">
+                    <p class="text-center">Don't have account? <a href="/auth/signup" id="signup" style="color:black"><b>Sign up here</b></a></p>
+                </div>
+            </form>
+				</div>
+			</div>
+			 

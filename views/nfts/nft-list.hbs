@@ -1,17 +1,19 @@
 <form action="/nfts/nfts-list" method="GET">
-<h1>Gallery</h1>
-
+<h1 id="gallery-title">NNFT Gallery</h1>
+<hr>
 <div class="gallery">
 {{#each nftsFromDb}}
     <div class="card">
       <div class="card-image">
-          <img src='{{imgUrl}}' alt='{{title}}' width="600" height="400"/>
+      <img src='{{imgUrl}}' alt='{{title}}' width="600" height="400"/>
       </div>
       <div class="card-description">
         <h3>{{title}}</h3>
-        <p>{{value}} ETH</p>
-        <p>{{description}}</p>
-        <a href="/auth/profile/{{author._id}}"><p style="color: skyblue">Created By:<p>{{author.username}}</a>
+        <p>Speculation: 0.{{value}}ETH</p>
+        <p>Description:</p>
+        <i>{{description}}</i>
+        <br>
+        <a href="/auth/profile/{{author._id}}"><p>Created By: <strong style="color: skyblue">{{author.username}}</strong></p></a>
           {{#ifEquals ../userId author._id}}
           <a href='/nfts/delete/{{_id}}' class='btn btn-primary'>Delete</a>
           <a href='/nfts/edit/{{_id}}' class='btn btn-primary'>Edit</a>

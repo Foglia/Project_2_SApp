@@ -1,15 +1,20 @@
+
 <form action="/nfts/edit/{{editNft._id}}" method="POST" enctype='multipart/form-data'>
-<div class="nft-container">
-  <label for="">Title:</label>
-  <input type="text" name="title" id="" value='{{editNft.title}}'>
-  <label for="">Description:</label>
-  <input type="text" name="description" value='{{editNft.description}}'/>
-  <label for="">Value:</label>
-  <input type="number" name="value" id="" value='{{editNft.value}}'>
-  <input type='text' value='{{editNft.imgUrl}}' name='currentImage' hidden/></label>
-  <div class=''>
-      <label for='image'>Image:<input type='file' name='image' class='' /></label>
+<div class="formbases">
+  <div class="nft-container">
+    <h3>Edit your NNFT</h3>
+    <label for="">Title:</label>
+    <input type="text" name="title" id="" value='{{editNft.title}}'>
+    <label for="">Description:</label>
+    <input type="text" name="description" value='{{editNft.description}}'/>
+    <label for="">Value:</label>
+    <input type="number" name="value" id="" value='{{editNft.value}}'>
+    <label for="">Current File:</label>
+    <input type='text' value='{{editNft.imgUrl}}' name='currentImage' hidden/></label>
+    <div class='imgform'>
+      <label for='image'>Choose a New One:<input type='file' name='image' class='inputfile' /></label>
     </div>
-     <input type="submit" value="Update the NNFT">
-</form>
-</div>
+    <input type="submit" value="Update the NNFT">
+    </div>
+  </div>
+     

@@ -1,11 +1,8 @@
-<h1>NNFT {{user.accountType}} Profile {{#ifEquals userId currentUser._id}}
-<a href='/auth/edit/{{user._id}}' class='btn btn-primary'><button>Edit Profile</button></a>
+<h1 id="gallery-title">NNFT {{user.accountType}} {{#ifEquals userId currentUser._id}}  
+<a href='/auth/edit/{{user._id}}' class='artistbtn'><button>Edit Profile</button></a>
 {{/ifEquals}}</h1>
-<hr/>
-<div>
-    <h2>Created By: {{user.firstName}} {{user.lastName}}</h2>
-    <h3>{{description}}<h3>
-    <h4>Individual Gallery</h4>
+<hr>
+</div>      
 <div class="art-profile">    
 {{#each user.uploads}}
 <div class="artist-gallery">
